@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { C, APPLY_LINK, shadow } from "../theme";
 import { STATS, SERVICES, INTERNSHIP_DOMAINS, TESTIMONIALS } from "../data";
 import RevealBox from "../components/RevealBox";
+import Icon from "../components/Icons";
 
 function StatCard({ num, label }) {
   return (
@@ -18,7 +19,6 @@ export default function Home() {
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <section style={{ background: `linear-gradient(150deg, #f0f9ff 0%, #ede9fe 50%, #f0fdf4 100%)`, padding: "6rem 2.5rem 5rem", position: "relative", overflow: "hidden" }}>
-        {/* decorative circles */}
         <div style={{ position: "absolute", top: -80, right: -80, width: 400, height: 400, borderRadius: "50%", background: `radial-gradient(circle, ${C.primary}18, transparent 70%)`, pointerEvents: "none" }} />
         <div style={{ position: "absolute", bottom: -60, left: -60, width: 300, height: 300, borderRadius: "50%", background: `radial-gradient(circle, ${C.accent}14, transparent 70%)`, pointerEvents: "none" }} />
 
@@ -26,7 +26,7 @@ export default function Home() {
           <div>
             <RevealBox>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1px solid ${C.border}`, borderRadius: 50, padding: "6px 18px", marginBottom: 28, boxShadow: shadow.sm }}>
-                <span style={{ width: 8, height: 8, borderRadius: "50%", background: C.green, display: "inline-block" }} />
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.green, display: "inline-block" }} />
                 <span style={{ fontSize: 13, color: C.textSub, fontWeight: 600 }}>June 2026 Batch — Now Open</span>
               </div>
             </RevealBox>
@@ -51,7 +51,7 @@ export default function Home() {
                   color: "#fff", borderRadius: 12, padding: "14px 32px",
                   fontWeight: 700, fontSize: 16, textDecoration: "none",
                   boxShadow: `0 4px 24px ${C.primary}40`, display: "inline-block",
-                }}>🎓 Apply for Free</a>
+                }}>Apply for Free</a>
                 <Link to="/services" style={{ background: "#fff", color: C.text, border: `1px solid ${C.border}`, borderRadius: 12, padding: "14px 32px", fontWeight: 600, fontSize: 16, textDecoration: "none", boxShadow: shadow.sm }}>Our Services →</Link>
               </div>
             </RevealBox>
@@ -66,21 +66,23 @@ export default function Home() {
           <RevealBox delay={0.1}>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {[
-                { icon: "🎓", label: "Free Virtual Internships", sub: "Web · AI · Android · Cloud · more", color: C.primary, bg: C.primaryLight },
-                { icon: "💻", label: "IT Services & Solutions", sub: "Web · App · AI · Digital Marketing", color: C.accent, bg: C.accentLight },
-                { icon: "📚", label: "Online Courses", sub: "Industry-oriented · Certificate included", color: C.green, bg: C.greenLight },
-                { icon: "🏆", label: "Career Support", sub: "LOR · Certificate · LinkedIn Recommendation", color: C.yellow, bg: C.yellowLight },
+                { icon: "graduation-cap", label: "Free Virtual Internships", sub: "Web · AI · Android · Cloud · more", color: C.primary, bg: C.primaryLight },
+                { icon: "monitor", label: "IT Services & Solutions", sub: "Web · App · AI · Digital Marketing", color: C.accent, bg: C.accentLight },
+                { icon: "book-open", label: "Online Courses", sub: "Industry-oriented · Certificate included", color: C.green, bg: C.greenLight },
+                { icon: "trending-up", label: "Career Support", sub: "LOR · Certificate · LinkedIn Recommendation", color: C.yellow, bg: C.yellowLight },
               ].map(({ icon, label, sub, color, bg }) => (
                 <div key={label} style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 14, padding: "1.1rem 1.4rem", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.sm, transition: "all 0.2s" }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 8px 24px ${color}20`; e.currentTarget.style.transform = "translateX(4px)"; }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
-                  <div style={{ width: 46, height: 46, borderRadius: 12, background: bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{icon}</div>
+                  <div style={{ width: 46, height: 46, borderRadius: 12, background: bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color }}>
+                    <Icon name={icon} size={22} />
+                  </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700, fontSize: 15, color: C.dark }}>{label}</div>
                     <div style={{ fontSize: 12, color: C.muted, marginTop: 2 }}>{sub}</div>
                   </div>
-                  <div style={{ color, fontSize: 18 }}>→</div>
+                  <div style={{ color, fontSize: 18, fontWeight: 300 }}>→</div>
                 </div>
               ))}
             </div>
@@ -106,7 +108,9 @@ export default function Home() {
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 12px 32px ${color}18`; e.currentTarget.style.transform = "translateY(-4px)"; }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
-                  <div style={{ width: 52, height: 52, borderRadius: 14, background: `${color}15`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 16 }}>{icon}</div>
+                  <div style={{ width: 52, height: 52, borderRadius: 14, background: `${color}15`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16, color }}>
+                    <Icon name={icon} size={24} />
+                  </div>
                   <h3 style={{ fontWeight: 700, fontSize: 17, color: C.dark, margin: "0 0 8px" }}>{title}</h3>
                   <p style={{ color: C.textSub, fontSize: 14, lineHeight: 1.75, margin: 0 }}>{desc}</p>
                 </div>
@@ -142,8 +146,10 @@ export default function Home() {
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
-                    <div style={{ width: 52, height: 52, borderRadius: 14, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26 }}>{icon}</div>
-                    <span style={{ fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 50, background: seats === "Limited" ? C.yellowLight : C.greenLight, color: seats === "Limited" ? "#92400e" : "#065f46" }}>{seats === "Limited" ? "⚠ Limited" : "✓ Open"}</span>
+                    <div style={{ width: 52, height: 52, borderRadius: 14, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", color }}>
+                      <Icon name={icon} size={24} />
+                    </div>
+                    <span style={{ fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 50, background: seats === "Limited" ? C.yellowLight : C.greenLight, color: seats === "Limited" ? "#92400e" : "#065f46" }}>{seats === "Limited" ? "Limited Seats" : "Open"}</span>
                   </div>
                   <h3 style={{ fontWeight: 700, fontSize: 16, color: C.dark, margin: "0 0 6px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 16px" }}>{tech}</p>
@@ -202,7 +208,7 @@ export default function Home() {
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem", letterSpacing: "-1px" }}>Ready to Start Your Journey?</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who've transformed their careers with Crix Technology. Apply today — it's 100% free.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>🎓 Apply for Free</a>
+              <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply for Free</a>
               <Link to="/contact" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 12, padding: "14px 36px", fontWeight: 600, fontSize: 16, textDecoration: "none" }}>Contact Us</Link>
             </div>
           </div>

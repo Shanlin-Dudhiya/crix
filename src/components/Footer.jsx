@@ -7,23 +7,19 @@ export default function Footer() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }} className="footer-grid">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
-              <div style={{ width: 36, height: 36, borderRadius: 10, background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#fff", fontSize: 18 }}>C</div>
-              <div>
-                <span style={{ fontWeight: 800, fontSize: 16, color: "#fff" }}>CRIX</span>
-                <span style={{ fontWeight: 400, fontSize: 12, color: C.primary, marginLeft: 6, letterSpacing: "0.5px" }}>TECHNOLOGY</span>
-              </div>
+            <div style={{ marginBottom: 18 }}>
+              <img src="/crix-logo.png" alt="Crix Technology" style={{ height: 40, width: "auto", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
             </div>
             <p style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.85, maxWidth: 300, marginBottom: 18 }}>
               Your one-stop solution for IT services, virtual internships, and future-ready skills training. Based in Ahmedabad, serving all of India.
             </p>
-            <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>📞 9723223588</a><br />
-            <a href="mailto:services.crix@gmail.com" style={{ color: C.primary, fontWeight: 600, textDecoration: "none", fontSize: 14 }}>✉️ services.crix@gmail.com</a>
+            <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>9723223588</a><br />
+            <a href="mailto:crixtechnology@gmail.com" style={{ color: C.primary, fontWeight: 600, textDecoration: "none", fontSize: 14, marginTop: 6, display: "inline-block" }}>crixtechnology@gmail.com</a>
           </div>
 
           {[
-            { heading: "Internships", links: [["Web Development", "/internships"], ["Android Dev", "/internships"], ["AI / ML", "/internships"], ["Data Science", "/internships"], ["Cybersecurity", "/internships"]] },
-            { heading: "Company", links: [["About Us", "/about"], ["Our Team", "/team"], ["Services", "/services"], ["Courses", "/courses"], ["Contact", "/contact"]] },
+            { heading: "Internships", links: [["Web Development", "/internships"], ["Android Development", "/internships"]] },
+            { heading: "Company", links: [["About Us", "/about"], ["Services", "/services"], ["Courses", "/courses"], ["Contact", "/contact"]] },
             { heading: "Quick Links", links: [["Apply for Internship", APPLY_LINK], ["Get a Quote", "/contact"], ["Privacy Policy", "/contact"], ["Terms of Service", "/contact"]] },
           ].map(({ heading, links }) => (
             <div key={heading}>
@@ -48,7 +44,7 @@ export default function Footer() {
 
         <div style={{ borderTop: "1px solid #1e293b", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <p style={{ color: "#334155", fontSize: 13, margin: 0 }}>© {new Date().getFullYear()} Crix Technology. All rights reserved. · Ahmedabad, Gujarat, India</p>
-          <p style={{ color: "#334155", fontSize: 13, margin: 0 }}>Built with ❤️ for India's next tech generation</p>
+          <p style={{ color: "#334155", fontSize: 13, margin: 0 }}>Built for India's next tech generation</p>
         </div>
       </div>
 

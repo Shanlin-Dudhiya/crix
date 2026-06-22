@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { C, shadow } from "../theme";
 import { SERVICES } from "../data";
 import RevealBox from "../components/RevealBox";
+import Icon from "../components/Icons";
 
 const PROCESS = [
   { n: "01", title: "Discovery Call", desc: "We understand your business goals, requirements, and timeline." },
@@ -34,10 +35,12 @@ export default function Services() {
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
                   <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${color}, ${C.accent})` }} />
-                  <div style={{ width: 58, height: 58, borderRadius: 16, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, marginBottom: 20 }}>{icon}</div>
+                  <div style={{ width: 58, height: 58, borderRadius: 16, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20, color }}>
+                    <Icon name={icon} size={26} />
+                  </div>
                   <h3 style={{ fontWeight: 800, fontSize: 19, color: C.dark, margin: "0 0 10px" }}>{title}</h3>
                   <p style={{ color: C.textSub, fontSize: 15, lineHeight: 1.8, margin: "0 0 20px" }}>{desc}</p>
-                  <Link to="/contact" style={{ display: "inline-block", color: color, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get a Quote →</Link>
+                  <Link to="/contact" style={{ display: "inline-block", color, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get a Quote →</Link>
                 </div>
               </RevealBox>
             ))}

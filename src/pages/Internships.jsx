@@ -1,16 +1,17 @@
 import { C, APPLY_LINK, shadow } from "../theme";
 import { INTERNSHIP_DOMAINS, STEPS } from "../data";
 import RevealBox from "../components/RevealBox";
+import Icon from "../components/Icons";
 
 const BENEFITS = [
-  { icon: "🆓", label: "100% Free", desc: "No registration fee, no hidden charges." },
-  { icon: "📜", label: "Verified Certificate", desc: "Industry-recognized digital certificate on completion." },
-  { icon: "🏠", label: "Work from Home", desc: "Fully virtual — work from anywhere in India." },
-  { icon: "🧑‍💼", label: "Letter of Recommendation", desc: "Official LOR from Crix Technology." },
-  { icon: "🔗", label: "LinkedIn Recognition", desc: "Official LinkedIn recommendation added to your profile." },
-  { icon: "💼", label: "Resume Boost", desc: "Real project experience to impress top recruiters." },
-  { icon: "🧑‍🏫", label: "Mentor Support", desc: "Dedicated mentor guidance throughout the program." },
-  { icon: "📋", label: "Real Tasks", desc: "Industry-level project tasks — not just theory." },
+  { icon: "gift", label: "100% Free", desc: "No registration fee, no hidden charges." },
+  { icon: "award", label: "Verified Certificate", desc: "Industry-recognized digital certificate on completion." },
+  { icon: "home", label: "Work from Home", desc: "Fully virtual — work from anywhere in India." },
+  { icon: "file-text", label: "Letter of Recommendation", desc: "Official LOR from Crix Technology." },
+  { icon: "linkedin", label: "LinkedIn Recognition", desc: "Official LinkedIn recommendation added to your profile." },
+  { icon: "briefcase", label: "Resume Boost", desc: "Real project experience to impress top recruiters." },
+  { icon: "user-check", label: "Mentor Support", desc: "Dedicated mentor guidance throughout the program." },
+  { icon: "clipboard", label: "Real Tasks", desc: "Industry-level project tasks — not just theory." },
 ];
 
 export default function Internships() {
@@ -23,7 +24,7 @@ export default function Internships() {
           <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 18 }}>VIRTUAL INTERNSHIP PROGRAM</span>
           <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1.5px" }}>Free Virtual Internships</h1>
           <p style={{ color: C.textSub, fontSize: 18, maxWidth: 600, margin: "0 auto 2rem", lineHeight: 1.75 }}>No interview. No fees. Real experience. Choose your domain and apply now.</p>
-          <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: `0 4px 24px ${C.primary}40` }}>🎓 Apply Now — It's Free</a>
+          <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: `0 4px 24px ${C.primary}40` }}>Apply Now — It's Free</a>
         </RevealBox>
       </section>
 
@@ -57,7 +58,7 @@ export default function Internships() {
           <RevealBox>
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
               <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 14 }}>CHOOSE YOUR DOMAIN</span>
-              <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: C.dark, margin: 0, letterSpacing: "-1px" }}>6 Internship Domains</h2>
+              <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: C.dark, margin: 0, letterSpacing: "-1px" }}> Internship Domains</h2>
             </div>
           </RevealBox>
 
@@ -69,12 +70,14 @@ export default function Internships() {
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 18 }}>
-                    <div style={{ width: 58, height: 58, borderRadius: 16, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28 }}>{icon}</div>
-                    <span style={{ fontSize: 11, fontWeight: 700, padding: "4px 12px", borderRadius: 50, background: seats === "Limited" ? C.yellowLight : C.greenLight, color: seats === "Limited" ? "#92400e" : "#065f46" }}>{seats === "Limited" ? "⚠ Limited Seats" : "✓ Open"}</span>
+                    <div style={{ width: 58, height: 58, borderRadius: 16, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", color }}>
+                      <Icon name={icon} size={26} />
+                    </div>
+                    <span style={{ fontSize: 11, fontWeight: 700, padding: "4px 12px", borderRadius: 50, background: seats === "Limited" ? C.yellowLight : C.greenLight, color: seats === "Limited" ? "#92400e" : "#065f46" }}>{seats === "Limited" ? "Limited Seats" : "Open"}</span>
                   </div>
                   <h3 style={{ fontWeight: 800, fontSize: 18, color: C.dark, margin: "0 0 8px" }}>{title}</h3>
-                  <p style={{ fontSize: 13, color: C.muted, margin: "0 0 8px" }}><strong>Tech Stack:</strong> {tech}</p>
-                  <p style={{ fontSize: 13, color: C.muted, margin: "0 0 20px" }}>⏱ Duration: {duration}</p>
+                  <p style={{ fontSize: 13, color: C.muted, margin: "0 0 6px" }}><strong>Tech Stack:</strong> {tech}</p>
+                  <p style={{ fontSize: 13, color: C.muted, margin: "0 0 20px" }}>Duration: {duration}</p>
                   <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</a>
                 </div>
               </RevealBox>
@@ -96,8 +99,13 @@ export default function Internships() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
             {BENEFITS.map(({ icon, label, desc }, i) => (
               <RevealBox key={label} delay={i * 0.06}>
-                <div style={{ background: C.bg, border: `1px solid ${C.border}`, borderRadius: 14, padding: "1.5rem", display: "flex", gap: 14, alignItems: "flex-start" }}>
-                  <div style={{ fontSize: 26, flexShrink: 0 }}>{icon}</div>
+                <div style={{ background: C.bg, border: `1px solid ${C.border}`, borderRadius: 14, padding: "1.5rem", display: "flex", gap: 14, alignItems: "flex-start", transition: "all 0.2s" }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = C.primary; e.currentTarget.style.background = "#fff"; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.background = C.bg; }}
+                >
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: C.primary }}>
+                    <Icon name={icon} size={18} />
+                  </div>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: 14, color: C.dark, marginBottom: 4 }}>{label}</div>
                     <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{desc}</div>
@@ -115,7 +123,7 @@ export default function Internships() {
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Don't Miss the June 2026 Batch</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Limited seats are filling up fast. Apply today — 100% free, no interview required.</p>
-            <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 40px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>🎓 Apply for Free Now</a>
+            <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 40px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply for Free Now</a>
           </div>
         </RevealBox>
       </section>

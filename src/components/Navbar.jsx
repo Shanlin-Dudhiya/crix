@@ -20,7 +20,7 @@ export default function Navbar() {
     <>
       {/* Announcement bar */}
       <div style={{ background: `linear-gradient(90deg, ${C.primary}, ${C.accent})`, padding: "9px 0", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#fff" }}>
-        🎓 June 2026 Internship Batch is OPEN — Limited Seats!&nbsp;&nbsp;
+        June 2026 Internship Batch is OPEN — Limited Seats!&nbsp;&nbsp;
         <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 20, padding: "2px 14px", color: "#fff", fontSize: 12, fontWeight: 700, textDecoration: "none" }}>Apply Now →</a>
       </div>
 
@@ -34,12 +34,8 @@ export default function Navbar() {
         justifyContent: "space-between", height: 66, transition: "all 0.3s",
       }}>
         {/* Logo */}
-        <Link to="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <div style={{ width: 38, height: 38, borderRadius: 10, background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#fff", fontSize: 19 }}>C</div>
-          <div>
-            <span style={{ fontWeight: 800, fontSize: 18, color: C.dark, letterSpacing: "-0.5px" }}>CRIX</span>
-            <span style={{ fontWeight: 500, fontSize: 13, color: C.primary, marginLeft: 6, letterSpacing: "0.5px" }}>TECHNOLOGY</span>
-          </div>
+        <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <img src="/crix-logo.png" alt="Crix Technology" style={{ height: 42, width: "auto", objectFit: "contain" }} />
         </Link>
 
         {/* Desktop nav */}

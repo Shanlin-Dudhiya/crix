@@ -7,6 +7,8 @@ import Internships from "./pages/Internships";
 import Services from "./pages/Services";
 import Courses from "./pages/Courses";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import { C } from "./theme";
 
 function NotFound() {
@@ -33,6 +35,8 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

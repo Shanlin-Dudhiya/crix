@@ -19,9 +19,9 @@ export default function Navbar() {
   return (
     <>
       {/* Announcement bar */}
-      <div style={{ background: `linear-gradient(90deg, ${C.primary}, ${C.accent})`, padding: "9px 0", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#fff" }}>
-        June 2026 Internship Batch is OPEN — Limited Seats!&nbsp;&nbsp;
-        <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 20, padding: "2px 14px", color: "#fff", fontSize: 12, fontWeight: 700, textDecoration: "none" }}>Apply Now →</a>
+      <div style={{ background: `linear-gradient(90deg, ${C.primary}, ${C.accent})`, padding: "9px 1rem", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#fff", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "8px" }}>
+        <span>June 2026 Internship Batch is OPEN — Limited Seats!</span>
+        <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 20, padding: "2px 14px", color: "#fff", fontSize: 12, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}>Apply Now →</a>
       </div>
 
       <nav style={{
@@ -76,7 +76,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div style={{ position: "fixed", top: 107, left: 0, right: 0, background: "#fff", zIndex: 199, padding: "1.25rem 1.5rem", display: "flex", flexDirection: "column", gap: 4, borderBottom: `1px solid ${C.border}`, boxShadow: shadow.lg }}>
+        <div style={{ position: "fixed", top: 112, left: 0, right: 0, background: "#fff", zIndex: 199, padding: "1.25rem 1.5rem", display: "flex", flexDirection: "column", gap: 4, borderBottom: `1px solid ${C.border}`, boxShadow: shadow.lg }}>
           {NAV_LINKS.map(({ label, path }) => (
             <Link key={label} to={path} style={{ textDecoration: "none", color: C.text, fontSize: 15, fontWeight: 600, padding: "10px 12px", borderRadius: 8, background: location.pathname === path ? C.primaryLight : "transparent" }}>{label}</Link>
           ))}

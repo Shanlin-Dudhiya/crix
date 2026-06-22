@@ -101,7 +101,7 @@ export default function Home() {
             </div>
           </RevealBox>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.25rem", marginBottom: "2.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem", marginBottom: "2.5rem" }}>
             {SERVICES.slice(0, 3).map(({ icon, title, desc, color }, i) => (
               <RevealBox key={title} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 16, padding: "2rem", boxShadow: shadow.sm, transition: "all 0.25s", height: "100%" }}
@@ -217,7 +217,10 @@ export default function Home() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-grid { gap: 1.5rem !important; }
         }
       `}</style>
     </div>

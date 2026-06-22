@@ -1,15 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { C, APPLY_LINK, shadow } from "../theme";
 import { COURSES } from "../data";
 import RevealBox from "../components/RevealBox";
+import Icon from "../components/Icons";
 
 const FEATURES = [
-  { icon: "🎥", label: "Video Lectures", desc: "HD recorded lectures accessible anytime, anywhere." },
-  { icon: "📋", label: "Project-Based", desc: "Build real projects for your portfolio during the course." },
-  { icon: "🧑‍🏫", label: "Expert Instructors", desc: "Taught by industry professionals with years of experience." },
-  { icon: "📜", label: "Certificate", desc: "Receive a verified certificate upon course completion." },
+  { icon: "video", label: "Video Lectures", desc: "HD recorded lectures accessible anytime, anywhere." },
+  { icon: "clipboard", label: "Project-Based", desc: "Build real projects for your portfolio during the course." },
+  { icon: "user-check", label: "Expert Instructors", desc: "Taught by industry professionals with years of experience." },
+  { icon: "award", label: "Certificate", desc: "Receive a verified certificate upon course completion." },
 ];
 
 export default function Courses() {
+  const navigate = useNavigate();
   return (
     <div style={{ background: C.bg }}>
 
@@ -28,7 +31,9 @@ export default function Courses() {
           {FEATURES.map(({ icon, label, desc }, i) => (
             <RevealBox key={label} delay={i * 0.08}>
               <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                <div style={{ width: 48, height: 48, borderRadius: 12, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{icon}</div>
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: C.primary }}>
+                  <Icon name={icon} size={22} />
+                </div>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 14, color: C.dark, marginBottom: 4 }}>{label}</div>
                   <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{desc}</div>
@@ -62,19 +67,19 @@ export default function Courses() {
                       {badge && <span style={{ fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 50, background: `${badgeColor}20`, color: badgeColor, border: `1px solid ${badgeColor}40`, marginLeft: 10, flexShrink: 0 }}>{badge}</span>}
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
-                      <div style={{ fontSize: 13, color: C.textSub, display: "flex", alignItems: "center", gap: 8 }}><span>📖</span> {lessons} Lessons</div>
-                      <div style={{ fontSize: 13, color: C.textSub, display: "flex", alignItems: "center", gap: 8 }}><span>⏱</span> {duration}</div>
-                      <div style={{ fontSize: 13, color: C.textSub, display: "flex", alignItems: "center", gap: 8 }}><span>📶</span> {level}</div>
+                      <div style={{ fontSize: 13, color: C.textSub }}>{lessons} Lessons</div>
+                      <div style={{ fontSize: 13, color: C.textSub }}>{duration}</div>
+                      <div style={{ fontSize: 13, color: C.textSub }}>{level}</div>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 16, borderTop: `1px solid ${C.border}` }}>
                       <div>
                         <span style={{ fontSize: 22, fontWeight: 900, color: C.primary }}>FREE</span>
                         <span style={{ fontSize: 12, color: C.muted, marginLeft: 6 }}>with Internship</span>
                       </div>
-                      <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: `${C.primary}15`, color: C.primary, border: `1.5px solid ${C.primary}40`, borderRadius: 8, padding: "8px 18px", fontWeight: 700, fontSize: 13, textDecoration: "none", transition: "all 0.2s" }}
+                      <button onClick={() => navigate("/contact")} style={{ background: `${C.primary}15`, color: C.primary, border: `1.5px solid ${C.primary}40`, borderRadius: 8, padding: "8px 18px", fontWeight: 700, fontSize: 13, cursor: "pointer", transition: "all 0.2s" }}
                         onMouseEnter={e => { e.currentTarget.style.background = C.primary; e.currentTarget.style.color = "#fff"; }}
                         onMouseLeave={e => { e.currentTarget.style.background = `${C.primary}15`; e.currentTarget.style.color = C.primary; }}
-                      >Enroll Free</a>
+                      >Enroll Free</button>
                     </div>
                   </div>
                 </div>
@@ -90,7 +95,7 @@ export default function Courses() {
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Start Learning Today — For Free</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Apply for our internship and get access to all courses at zero cost.</p>
-            <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.green, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>🎓 Apply Now & Get Free Courses</a>
+            <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.green, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>Apply Now & Get Free Courses</a>
           </div>
         </RevealBox>
       </section>

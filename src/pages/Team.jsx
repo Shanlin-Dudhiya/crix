@@ -78,7 +78,7 @@ export default function Team() {
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Want to Join Our Team?</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>We're always looking for passionate people who want to make a difference in tech education.</p>
-            <a href="mailto:services.crix@gmail.com" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>📩 Get In Touch</a>
+            <a href="mailto:services.crix@gmail.com" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>Get In Touch →</a>
           </div>
         </RevealBox>
       </section>

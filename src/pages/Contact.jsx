@@ -2,10 +2,20 @@ import { useState } from "react";
 import { C, APPLY_LINK, shadow } from "../theme";
 import { INTERNSHIP_DOMAINS, SERVICES } from "../data";
 import RevealBox from "../components/RevealBox";
+import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "../components/Icons";
+
+const CONTACT_INFO = [
+  { Icon: PhoneIcon, label: "Call / WhatsApp", value: "9723223588", href: "tel:9723223588" },
+  { Icon: MailIcon, label: "Email Us", value: "crixtechnology@gmail.com", href: "mailto:crixtechnology@gmail.com" },
+  { Icon: MapPinIcon, label: "Location", value: "Ahmedabad, Gujarat, India", href: null },
+  { Icon: ClockIcon, label: "Working Hours", value: "Mon–Sat, 9am–6pm IST", href: null },
+];
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", college: "", domain: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const inp = {
     width: "100%", padding: "13px 16px",
@@ -15,11 +25,37 @@ export default function Contact() {
     transition: "border-color 0.2s", boxShadow: shadow.sm,
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", college: "", domain: "", message: "" });
-    setTimeout(() => setSent(false), 5000);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/finoxtechno@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          _subject: `Crix Technology Inquiry — ${form.domain}`,
+          Name: form.name,
+          Email: form.email,
+          "College / Company": form.college,
+          Interest: form.domain,
+          Message: form.message,
+          _template: "table",
+        }),
+      });
+      const result = await res.json();
+      if (result.success === "true" || result.success === true) {
+        setSent(true);
+        setForm({ name: "", email: "", college: "", domain: "", message: "" });
+        setTimeout(() => setSent(false), 6000);
+      } else {
+        setError("Something went wrong. Please email us directly at crixtechnology@gmail.com");
+      }
+    } catch {
+      setError("Network error. Please email us at crixtechnology@gmail.com");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -43,14 +79,11 @@ export default function Contact() {
             <h2 style={{ fontSize: "clamp(1.6rem, 3vw, 2rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-0.5px" }}>Contact Information</h2>
             <p style={{ color: C.textSub, fontSize: 15, lineHeight: 1.85, marginBottom: "2rem" }}>We respond to all inquiries within 24 hours. Feel free to reach out via call, email, or WhatsApp.</p>
 
-            {[
-              { icon: "📞", label: "Call / WhatsApp", value: "9723223588", href: "tel:9723223588" },
-              { icon: "✉️", label: "Email Us", value: "crixtechnology@gmail.com", href: "mailto:services.crix@gmail.com" },
-              { icon: "📍", label: "Location", value: "Ahmedabad, Gujarat, India", href: null },
-              { icon: "🕐", label: "Working Hours", value: "Mon–Sat, 9am–6pm IST", href: null },
-            ].map(({ icon, label, value, href }) => (
+            {CONTACT_INFO.map(({ Icon, label, value, href }) => (
               <div key={label} style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 22 }}>
-                <div style={{ width: 48, height: 48, borderRadius: 13, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{icon}</div>
+                <div style={{ width: 48, height: 48, borderRadius: 13, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: C.primary }}>
+                  <Icon size={20} />
+                </div>
                 <div>
                   <div style={{ fontSize: 12, color: C.muted, marginBottom: 2, fontWeight: 600, letterSpacing: "0.3px" }}>{label}</div>
                   {href ? <a href={href} style={{ color: C.primary, fontWeight: 700, fontSize: 15, textDecoration: "none" }}>{value}</a> : <div style={{ color: C.dark, fontWeight: 600, fontSize: 15 }}>{value}</div>}
@@ -60,7 +93,7 @@ export default function Contact() {
 
             {/* Internship CTA box */}
             <div style={{ marginTop: "2rem", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, borderRadius: 16, padding: "1.75rem" }}>
-              <div style={{ fontWeight: 800, color: "#fff", fontSize: 16, marginBottom: 8 }}>🎓 Apply for Internship</div>
+              <div style={{ fontWeight: 800, color: "#fff", fontSize: 16, marginBottom: 8 }}>Apply for Internship</div>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: 16 }}>100% free, no interview. Click below to apply directly via our Google Form.</p>
               <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 9, padding: "10px 22px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</a>
             </div>
@@ -71,8 +104,10 @@ export default function Contact() {
             <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 22, padding: "2.5rem", boxShadow: shadow.lg }}>
               {sent ? (
                 <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
-                  <div style={{ fontSize: 64, marginBottom: 20 }}>🎉</div>
-                  <div style={{ fontWeight: 800, fontSize: 22, color: C.dark, marginBottom: 10 }}>Message Received!</div>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: 20, color: C.green }}>
+                    <CheckCircleIcon size={64} />
+                  </div>
+                  <div style={{ fontWeight: 800, fontSize: 22, color: C.dark, marginBottom: 10 }}>Message Sent!</div>
                   <div style={{ color: C.textSub, fontSize: 15, lineHeight: 1.7 }}>We'll get back to you within 24 hours. Thank you for reaching out to Crix Technology!</div>
                 </div>
               ) : (
@@ -91,21 +126,22 @@ export default function Contact() {
                   <select value={form.domain} onChange={e => setForm(f => ({ ...f, domain: e.target.value }))} required style={{ ...inp, color: form.domain ? C.text : C.muted }}>
                     <option value="" disabled>Select Your Interest</option>
                     <optgroup label="Internship Domains">
-                      {INTERNSHIP_DOMAINS.map(d => <option key={d.title} value={d.title}>{d.icon} {d.title} Internship</option>)}
+                      {INTERNSHIP_DOMAINS.map(d => <option key={d.title} value={d.title}>{d.title} Internship</option>)}
                     </optgroup>
                     <optgroup label="IT Services">
-                      {SERVICES.map(s => <option key={s.title} value={s.title}>{s.icon} {s.title}</option>)}
+                      {SERVICES.map(s => <option key={s.title} value={s.title}>{s.title}</option>)}
                     </optgroup>
                   </select>
                   <textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} placeholder="Tell us about yourself or your project requirements..." rows={4}
                     style={{ ...inp, resize: "vertical" }}
                     onFocus={e => e.target.style.borderColor = C.primary}
                     onBlur={e => e.target.style.borderColor = C.border} />
-                  <button type="submit" style={{ background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 11, padding: "14px 0", fontWeight: 800, fontSize: 16, cursor: "pointer", boxShadow: `0 4px 20px ${C.primary}35`, transition: "opacity 0.2s" }}
-                    onMouseEnter={e => e.target.style.opacity = "0.9"}
+                  {error && <p style={{ color: C.red, fontSize: 13, margin: 0 }}>{error}</p>}
+                  <button type="submit" disabled={loading} style={{ background: loading ? C.muted : `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 11, padding: "14px 0", fontWeight: 800, fontSize: 16, cursor: loading ? "not-allowed" : "pointer", boxShadow: `0 4px 20px ${C.primary}35`, transition: "opacity 0.2s" }}
+                    onMouseEnter={e => { if (!loading) e.target.style.opacity = "0.9"; }}
                     onMouseLeave={e => e.target.style.opacity = "1"}
-                  >Send Message →</button>
-                  <p style={{ textAlign: "center", fontSize: 13, color: C.muted, margin: 0 }}>Or reach us directly: <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9723223588</a> on WhatsApp</p>
+                  >{loading ? "Sending..." : "Send Message →"}</button>
+                  <p style={{ textAlign: "center", fontSize: 13, color: C.muted, margin: 0 }}>Or call us: <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9723223588</a></p>
                 </form>
               )}
             </div>

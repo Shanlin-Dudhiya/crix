@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Internships from "./pages/Internships";
 import Services from "./pages/Services";
 import Courses from "./pages/Courses";
-import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import { C } from "./theme";
 
@@ -33,7 +32,6 @@ export default function App() {
             <Route path="/internships" element={<Internships />} />
             <Route path="/services" element={<Services />} />
             <Route path="/courses" element={<Courses />} />
-            <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

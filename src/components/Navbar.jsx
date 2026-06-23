@@ -20,7 +20,7 @@ export default function Navbar() {
     <>
       {/* Announcement bar */}
       <div style={{ background: `linear-gradient(90deg, ${C.primary}, ${C.accent})`, padding: "9px 1rem", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#fff", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "8px" }}>
-        <span>June 2026 Internship Batch is OPEN — Limited Seats!</span>
+        <span>June-July 2026 Internship Batch is OPEN — Limited Seats!</span>
         <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 20, padding: "2px 14px", color: "#fff", fontSize: 12, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}>Apply Now →</a>
       </div>
 

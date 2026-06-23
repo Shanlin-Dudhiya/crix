@@ -1,8 +1,8 @@
 import { C } from "./theme";
 
 export const INTERNSHIP_DOMAINS = [
-  { icon: "globe", title: "Web Development", tech: "HTML · CSS · JavaScript · React", duration: "1 / 3 Month", seats: "Open", color: C.primary },
-  { icon: "smartphone", title: "Android Development", tech: "Java · Kotlin · React Native", duration: "1 / 3 Month", seats: "Open", color: "#06b6d4" },
+  { icon: "globe", title: "Web Development", tech: "HTML · CSS · JavaScript · React", duration: "15 Days / 3 Month / 6 Month", seats: "Open", color: C.primary },
+  { icon: "smartphone", title: "Android Development", tech: "Java · Kotlin · React Native", duration: "15 Days / 3 Month / 6 Month", seats: "Open", color: "#06b6d4" },
 ];
 
 export const SERVICES = [
@@ -15,8 +15,14 @@ export const SERVICES = [
 ];
 
 export const COURSES = [
-  { title: "Full Stack Web Development", duration: "3 months", level: "Beginner → Pro", badge: "Bestseller", badgeColor: C.yellow },
-  { title: "Android App", duration: "3 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "Full Stack Web Development", duration: "6 months", level: "Beginner → Pro", badge: "Bestseller", badgeColor: C.yellow },
+  { title: "Android App", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "Node Js Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "React Js Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "Python Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "Java Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "SQL Database", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "Database", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
 ];
 
 // export const STATS = [

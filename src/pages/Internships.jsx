@@ -121,7 +121,7 @@ export default function Internships() {
       <section style={{ padding: "5rem 2.5rem", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})` }}>
         <RevealBox>
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Don't Miss the June 2026 Batch</h2>
+            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Don't Miss the June-July 2026 Batch</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Limited seats are filling up fast. Apply today for our free 15-day internship — no interview required.</p>
             <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 40px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply for Free Now</a>
           </div>

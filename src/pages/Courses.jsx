@@ -21,7 +21,7 @@ export default function Courses() {
         <RevealBox>
           <span style={{ display: "inline-block", background: C.greenLight, color: "#065f46", borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 18 }}>ONLINE COURSES</span>
           <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1.5px" }}>Learn In-Demand Skills</h1>
-          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 580, margin: "0 auto", lineHeight: 1.75 }}>Industry-oriented courses designed to get you job-ready. All courses are FREE with your internship enrollment.</p>
+          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 580, margin: "0 auto", lineHeight: 1.75 }}>Industry-oriented courses designed to get you job-ready. Enroll at a minimal cost and gain industry-recognized skills.</p>
         </RevealBox>
       </section>
 
@@ -74,7 +74,7 @@ export default function Courses() {
                       <button onClick={() => navigate("/contact")} style={{ background: `${C.primary}15`, color: C.primary, border: `1.5px solid ${C.primary}40`, borderRadius: 8, padding: "8px 18px", fontWeight: 700, fontSize: 13, cursor: "pointer", transition: "all 0.2s" }}
                         onMouseEnter={e => { e.currentTarget.style.background = C.primary; e.currentTarget.style.color = "#fff"; }}
                         onMouseLeave={e => { e.currentTarget.style.background = `${C.primary}15`; e.currentTarget.style.color = C.primary; }}
-                      >Enroll Now</button>
+                      >Join Now</button>
                     </div>
                   </div>
                 </div>
@@ -89,8 +89,8 @@ export default function Courses() {
         <RevealBox>
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Start Learning Today</h2>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Apply for courses at minimum cost.</p>
-            <button onClick={() => navigate("/contact")} style={{ display: "inline-block", background: "#fff", color: C.green, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, border: "none", cursor: "pointer" }}>Apply Now & Get Courses</button>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Join for courses at minimum cost.</p>
+            <button onClick={() => navigate("/contact")} style={{ display: "inline-block", background: "#fff", color: C.green, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, border: "none", cursor: "pointer" }}>Join Now & Get Courses</button>
           </div>
         </RevealBox>
       </section>

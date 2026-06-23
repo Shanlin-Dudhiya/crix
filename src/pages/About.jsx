@@ -6,7 +6,7 @@ import Icon from "../components/Icons";
 
 const VALUES = [
   { icon: "target", title: "Mission-Driven", desc: "We exist to bridge the gap between education and industry — giving every student a real shot at a tech career." },
-  { icon: "gift", title: "Always Free", desc: "Every internship we offer is 100% free. We believe access to opportunity shouldn't depend on your wallet." },
+  { icon: "gift", title: "Free Internship", desc: "Our 15-day virtual internship is completely free. We believe access to opportunity shouldn't depend on your wallet." },
   { icon: "award", title: "Quality First", desc: "Real projects, industry mentors, and recognized certificates — not hollow experiences." },
   { icon: "users", title: "Community", desc: "15,000+ alumni who support each other, share opportunities, and grow together." },
 ];
@@ -43,7 +43,7 @@ export default function About() {
               We started as a small IT services company in Ahmedabad, Gujarat. As we grew, we noticed something troubling — thousands of talented students graduating without practical skills that employers actually needed.
             </p>
             <p style={{ color: C.textSub, fontSize: 16, lineHeight: 1.9, marginBottom: 32 }}>
-              So we built our internship program — completely free, fully virtual, and designed around real tasks that mirror actual industry work. Today, we've trained over 15,000 students from 200+ colleges across India.
+              So we built our internship program — a free 15-day virtual experience designed around real tasks that mirror actual industry work. Today, we've trained over 15,000 students from 200+ colleges across India.
             </p>
             <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, textDecoration: "none", boxShadow: `0 4px 16px ${C.primary}35` }}>Join Our Program →</a>
           </RevealBox>

@@ -4,7 +4,7 @@ import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
 
 const BENEFITS = [
-  { icon: "gift", label: "100% Free", desc: "No registration fee, no hidden charges." },
+  { icon: "gift", label: "Free 15-Day Internship", desc: "No registration fee, no hidden charges for the internship program." },
   { icon: "award", label: "Verified Certificate", desc: "Industry-recognized digital certificate on completion." },
   { icon: "home", label: "Work from Home", desc: "Fully virtual — work from anywhere in India." },
   { icon: "file-text", label: "Letter of Recommendation", desc: "Official LOR from Crix Technology." },
@@ -23,8 +23,8 @@ export default function Internships() {
         <RevealBox>
           <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 18 }}>VIRTUAL INTERNSHIP PROGRAM</span>
           <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1.5px" }}>Free Virtual Internships</h1>
-          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 600, margin: "0 auto 2rem", lineHeight: 1.75 }}>No interview. No fees. Real experience. Choose your domain and apply now.</p>
-          <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: `0 4px 24px ${C.primary}40` }}>Apply Now — It's Free</a>
+          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 600, margin: "0 auto 2rem", lineHeight: 1.75 }}>15-day virtual internship. No interview. No fees. Real experience. Choose your domain and join now.</p>
+          <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: `0 4px 24px ${C.primary}40` }}>Join Now — It's Free</a>
         </RevealBox>
       </section>
 
@@ -78,7 +78,7 @@ export default function Internships() {
                   <h3 style={{ fontWeight: 800, fontSize: 18, color: C.dark, margin: "0 0 8px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 6px" }}><strong>Tech Stack:</strong> {tech}</p>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 20px" }}>Duration: {duration}</p>
-                  <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</a>
+                  <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Join Now →</a>
                 </div>
               </RevealBox>
             ))}
@@ -122,7 +122,7 @@ export default function Internships() {
         <RevealBox>
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Don't Miss the June 2026 Batch</h2>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Limited seats are filling up fast. Apply today — 100% free, no interview required.</p>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Limited seats are filling up fast. Apply today for our free 15-day internship — no interview required.</p>
             <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 40px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply for Free Now</a>
           </div>
         </RevealBox>

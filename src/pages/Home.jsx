@@ -27,7 +27,7 @@ export default function Home() {
             <RevealBox>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1px solid ${C.border}`, borderRadius: 50, padding: "6px 18px", marginBottom: 28, boxShadow: shadow.sm }}>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.green, display: "inline-block" }} />
-                <span style={{ fontSize: 13, color: C.textSub, fontWeight: 600 }}>June 2026 Batch — Now Open</span>
+                <span style={{ fontSize: 13, color: C.textSub, fontWeight: 600 }}>June-July 2026 Batch — Now Open</span>
               </div>
             </RevealBox>
 
@@ -134,7 +134,7 @@ export default function Home() {
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
               <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 14 }}>VIRTUAL INTERNSHIPS</span>
               <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1px" }}>Launch Your Tech Career</h2>
-              <p style={{ color: C.textSub, fontSize: 16, maxWidth: 520, margin: "0 auto" }}>No fees. No interview. 100% virtual. Choose your domain and get started today.</p>
+              <p style={{ color: C.textSub, fontSize: 16, maxWidth: 520, margin: "0 auto" }}>15-day virtual internship. No fees. No interview. Choose your domain and get started today.</p>
             </div>
           </RevealBox>
 
@@ -206,7 +206,7 @@ export default function Home() {
         <RevealBox>
           <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem", letterSpacing: "-1px" }}>Ready to Start Your Journey?</h2>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who've transformed their careers with Crix Technology. Apply today — it's 100% free.</p>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who've transformed their careers with Crix Technology. Apply for our free 15-day internship today.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply for Free</a>
               <Link to="/contact" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 12, padding: "14px 36px", fontWeight: 600, fontSize: 16, textDecoration: "none" }}>Contact Us</Link>

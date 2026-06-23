@@ -27,7 +27,7 @@ export default function Services() {
       {/* ── SERVICE CARDS ───────────────────────────────────────── */}
       <section style={{ padding: "6rem 2.5rem", background: "#fff" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
             {SERVICES.map(({ icon, title, desc, color }, i) => (
               <RevealBox key={title} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 18, padding: "2.25rem", boxShadow: shadow.sm, transition: "all 0.25s", height: "100%", position: "relative", overflow: "hidden" }}

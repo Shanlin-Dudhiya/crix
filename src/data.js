@@ -15,8 +15,8 @@ export const SERVICES = [
 ];
 
 export const COURSES = [
-  { title: "Full Stack Web Development", lessons: 48, duration: "3 months", level: "Beginner → Pro", badge: "Bestseller", badgeColor: C.yellow },
-  { title: "Android App", lessons: 40, duration: "2 months", level: "Beginner → Pro", badge: null, badgeColor: null },
+  { title: "Full Stack Web Development", duration: "3 months", level: "Beginner → Pro", badge: "Bestseller", badgeColor: C.yellow },
+  { title: "Android App", duration: "3 months", level: "Beginner → Pro", badge: null, badgeColor: null },
 ];
 
 export const STATS = [

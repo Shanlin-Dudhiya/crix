@@ -62,7 +62,7 @@ export default function Internships() {
             </div>
           </RevealBox>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.25rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
             {INTERNSHIP_DOMAINS.map(({ icon, title, tech, duration, seats, color }, i) => (
               <RevealBox key={title} delay={i * 0.07}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 18, padding: "2rem", boxShadow: shadow.sm, transition: "all 0.25s", height: "100%" }}

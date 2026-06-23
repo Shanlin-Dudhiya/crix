@@ -52,7 +52,7 @@ export default function About() {
               {STATS.map((stat, idx) => {
                 const { icon, color, bg } = STAT_ICONS[idx];
                 return (
-                  <div key={stat.label} style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 16, padding: "1.75rem", textAlign: "center", boxShadow: shadow.sm, transition: "all 0.2s" }}
+                  <div key={stat.label} style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 16, padding: "1rem", textAlign: "center", boxShadow: shadow.sm, transition: "all 0.2s" }}
                     onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = `0 12px 32px ${color}18`; }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = shadow.sm; }}
                   >

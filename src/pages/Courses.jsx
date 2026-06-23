@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { C, APPLY_LINK, shadow } from "../theme";
+import { C, shadow } from "../theme";
 import { COURSES } from "../data";
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
@@ -53,8 +53,8 @@ export default function Courses() {
             </div>
           </RevealBox>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
-            {COURSES.map(({ title, lessons, duration, level, badge, badgeColor }, i) => (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+            {COURSES.map(({ title, duration, level, badge, badgeColor }, i) => (
               <RevealBox key={title} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 18, overflow: "hidden", boxShadow: shadow.sm, transition: "all 0.25s", height: "100%" }}
                   onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; e.currentTarget.style.boxShadow = shadow.lg; }}
@@ -67,19 +67,14 @@ export default function Courses() {
                       {badge && <span style={{ fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 50, background: `${badgeColor}20`, color: badgeColor, border: `1px solid ${badgeColor}40`, marginLeft: 10, flexShrink: 0 }}>{badge}</span>}
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
-                      <div style={{ fontSize: 13, color: C.textSub }}>{lessons} Lessons</div>
                       <div style={{ fontSize: 13, color: C.textSub }}>{duration}</div>
                       <div style={{ fontSize: 13, color: C.textSub }}>{level}</div>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 16, borderTop: `1px solid ${C.border}` }}>
-                      <div>
-                        <span style={{ fontSize: 22, fontWeight: 900, color: C.primary }}>FREE</span>
-                        <span style={{ fontSize: 12, color: C.muted, marginLeft: 6 }}>with Internship</span>
-                      </div>
                       <button onClick={() => navigate("/contact")} style={{ background: `${C.primary}15`, color: C.primary, border: `1.5px solid ${C.primary}40`, borderRadius: 8, padding: "8px 18px", fontWeight: 700, fontSize: 13, cursor: "pointer", transition: "all 0.2s" }}
                         onMouseEnter={e => { e.currentTarget.style.background = C.primary; e.currentTarget.style.color = "#fff"; }}
                         onMouseLeave={e => { e.currentTarget.style.background = `${C.primary}15`; e.currentTarget.style.color = C.primary; }}
-                      >Enroll Free</button>
+                      >Enroll Now</button>
                     </div>
                   </div>
                 </div>
@@ -93,9 +88,9 @@ export default function Courses() {
       <section style={{ padding: "5rem 2.5rem", background: `linear-gradient(135deg, ${C.green}, ${C.primary})` }}>
         <RevealBox>
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Start Learning Today — For Free</h2>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Apply for our internship and get access to all courses at zero cost.</p>
-            <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.green, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>Apply Now & Get Free Courses</a>
+            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Start Learning Today</h2>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Apply for courses at minimum cost.</p>
+            <button onClick={() => navigate("/contact")} style={{ display: "inline-block", background: "#fff", color: C.green, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, border: "none", cursor: "pointer" }}>Apply Now & Get Courses</button>
           </div>
         </RevealBox>
       </section>

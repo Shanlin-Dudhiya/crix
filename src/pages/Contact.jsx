@@ -35,6 +35,8 @@ export default function Contact() {
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
           _subject: `Crix Technology Inquiry — ${form.domain}`,
+          _replyto: form.email,
+          _honeypot: "",
           Name: form.name,
           Email: form.email,
           "College / Company": form.college,

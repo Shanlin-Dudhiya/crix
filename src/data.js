@@ -19,12 +19,12 @@ export const COURSES = [
   { title: "Android App", duration: "3 months", level: "Beginner → Pro", badge: null, badgeColor: null },
 ];
 
-export const STATS = [
-  { num: "15,000+", label: "Interns Trained" },
-  { num: "500+", label: "Projects Delivered" },
-  { num: "50+", label: "Courses Available" },
-  { num: "98%", label: "Satisfaction Rate" },
-];
+// export const STATS = [
+//   { num: "15,000+", label: "Interns Trained" },
+//   { num: "500+", label: "Projects Delivered" },
+//   { num: "50+", label: "Courses Available" },
+//   { num: "98%", label: "Satisfaction Rate" },
+// ];
 
 export const TESTIMONIALS = [
   { name: "Rahul Sharma", college: "GTU, Ahmedabad", domain: "Web Development", text: "Crix Technology gave me real project experience that no classroom could. The certificate helped me land my first job!", avatar: "RS", color: C.primary },

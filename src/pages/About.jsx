@@ -1,5 +1,5 @@
 import { C, APPLY_LINK, shadow } from "../theme";
-import { STATS } from "../data";
+// import { STATS } from "../data";
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
 
@@ -47,7 +47,7 @@ export default function About() {
             <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, textDecoration: "none", boxShadow: `0 4px 16px ${C.primary}35` }}>Join Our Program →</a>
           </RevealBox>
 
-          <RevealBox delay={0.15}>
+          {/* <RevealBox delay={0.15}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
               {STATS.map((stat, idx) => {
                 const { icon, color, bg } = STAT_ICONS[idx];
@@ -65,7 +65,7 @@ export default function About() {
                 );
               })}
             </div>
-          </RevealBox>
+          </RevealBox> */}
         </div>
       </section>
 

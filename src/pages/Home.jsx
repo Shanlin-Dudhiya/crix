@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { C, APPLY_LINK, shadow } from "../theme";
-import { STATS, SERVICES, INTERNSHIP_DOMAINS, TESTIMONIALS } from "../data";
+import { SERVICES, INTERNSHIP_DOMAINS, TESTIMONIALS } from "../data"; //STATS,
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
 
@@ -56,11 +56,11 @@ export default function Home() {
               </div>
             </RevealBox>
 
-            <RevealBox delay={0.25}>
+            {/* <RevealBox delay={0.25}>
               <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap", paddingTop: 28, borderTop: `1px solid ${C.border}` }}>
                 {STATS.map(s => <StatCard key={s.label} {...s} />)}
               </div>
-            </RevealBox>
+            </RevealBox> */}
           </div>
 
           <RevealBox delay={0.1}>

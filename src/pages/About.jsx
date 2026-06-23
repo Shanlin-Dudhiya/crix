@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { C, APPLY_LINK, shadow } from "../theme";
-// import { STATS } from "../data";
+import { SERVICES } from "../data";
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
 
@@ -10,12 +11,12 @@ const VALUES = [
   { icon: "users", title: "Community", desc: "15,000+ alumni who support each other, share opportunities, and grow together." },
 ];
 
-const STAT_ICONS = [
-  { icon: "graduation-cap", color: C.primary, bg: C.primaryLight },
-  { icon: "briefcase", color: C.accent, bg: C.accentLight },
-  { icon: "book-open", color: C.green, bg: C.greenLight },
-  { icon: "star", color: C.yellow, bg: C.yellowLight },
-];
+// const STAT_ICONS = [
+//   { icon: "graduation-cap", color: C.primary, bg: C.primaryLight },
+//   { icon: "briefcase", color: C.accent, bg: C.accentLight },
+//   { icon: "book-open", color: C.green, bg: C.greenLight },
+//   { icon: "star", color: C.yellow, bg: C.yellowLight },
+// ];
 
 export default function About() {
   return (
@@ -98,6 +99,42 @@ export default function About() {
         </div>
       </section>
 
+
+      {/* ── SERVICES ────────────────────────────────────────────── */}
+      <section style={{ padding: "6rem 2.5rem", background: "#fff" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <RevealBox>
+            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+              <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 14 }}>WHAT WE DO</span>
+              <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1px" }}>Our Services</h2>
+              <p style={{ color: C.textSub, fontSize: 16, maxWidth: 520, margin: "0 auto" }}>From web development to AI solutions — we help businesses grow with modern technology.</p>
+            </div>
+          </RevealBox>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem", marginBottom: "2.5rem" }}>
+            {SERVICES.map(({ icon, title, desc, color }, i) => (
+              <RevealBox key={title} delay={i * 0.07}>
+                <div style={{ background: C.bg, border: `1px solid ${C.border}`, borderRadius: 16, padding: "1.75rem", boxShadow: shadow.sm, height: "100%", transition: "all 0.25s" }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = `0 12px 32px ${color}18`; e.currentTarget.style.background = "#fff"; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.background = C.bg; }}
+                >
+                  <div style={{ width: 50, height: 50, borderRadius: 13, background: `${color}18`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16, color }}>
+                    <Icon name={icon} size={24} />
+                  </div>
+                  <h3 style={{ fontWeight: 700, fontSize: 16, color: C.dark, margin: "0 0 8px" }}>{title}</h3>
+                  <p style={{ color: C.textSub, fontSize: 14, lineHeight: 1.75, margin: 0 }}>{desc}</p>
+                </div>
+              </RevealBox>
+            ))}
+          </div>
+
+          <RevealBox>
+            <div style={{ textAlign: "center" }}>
+              <Link to="/services" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 10, padding: "12px 32px", fontWeight: 700, fontSize: 14, textDecoration: "none", boxShadow: `0 4px 16px ${C.primary}35` }}>View All Services →</Link>
+            </div>
+          </RevealBox>
+        </div>
+      </section>
 
       <style>{`
         @media (max-width: 768px) { .two-col { grid-template-columns: 1fr !important; gap: 2.5rem !important; } }

@@ -4,14 +4,14 @@ import { SERVICES, INTERNSHIP_DOMAINS, TESTIMONIALS } from "../data"; //STATS,
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
 
-function StatCard({ num, label }) {
-  return (
-    <div style={{ textAlign: "center" }}>
-      <div style={{ fontSize: 28, fontWeight: 900, color: C.primary, letterSpacing: "-1px" }}>{num}</div>
-      <div style={{ fontSize: 13, color: C.textSub, marginTop: 4 }}>{label}</div>
-    </div>
-  );
-}
+// function StatCard({ num, label }) {
+//   return (
+//     <div style={{ textAlign: "center" }}>
+//       <div style={{ fontSize: 28, fontWeight: 900, color: C.primary, letterSpacing: "-1px" }}>{num}</div>
+//       <div style={{ fontSize: 13, color: C.textSub, marginTop: 4 }}>{label}</div>
+//     </div>
+//   );
+// }
 
 export default function Home() {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
                   color: "#fff", borderRadius: 12, padding: "14px 32px",
                   fontWeight: 700, fontSize: 16, textDecoration: "none",
                   boxShadow: `0 4px 24px ${C.primary}40`, display: "inline-block",
-                }}>Apply for Free</a>
+                }}>Join for Free</a>
                 <Link to="/services" style={{ background: "#fff", color: C.text, border: `1px solid ${C.border}`, borderRadius: 12, padding: "14px 32px", fontWeight: 600, fontSize: 16, textDecoration: "none", boxShadow: shadow.sm }}>Our Services →</Link>
               </div>
             </RevealBox>
@@ -66,12 +66,12 @@ export default function Home() {
           <RevealBox delay={0.1}>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {[
-                { icon: "graduation-cap", label: "Free Virtual Internships", sub: "Web · AI · Android · Cloud · more", color: C.primary, bg: C.primaryLight },
-                { icon: "monitor", label: "IT Services & Solutions", sub: "Web · App · AI · Digital Marketing", color: C.accent, bg: C.accentLight },
-                { icon: "book-open", label: "Online Courses", sub: "Industry-oriented · Certificate included", color: C.green, bg: C.greenLight },
-                { icon: "trending-up", label: "Career Support", sub: "LOR · Certificate · LinkedIn Recommendation", color: C.yellow, bg: C.yellowLight },
-              ].map(({ icon, label, sub, color, bg }) => (
-                <div key={label} style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 14, padding: "1.1rem 1.4rem", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.sm, transition: "all 0.2s" }}
+                { icon: "graduation-cap", label: "Free Virtual Internships", sub: "Web · AI · Android · Cloud · more", color: C.primary, bg: C.primaryLight, to: "/internships" },
+                { icon: "monitor", label: "IT Services & Solutions", sub: "Web · App · AI · Digital Marketing", color: C.accent, bg: C.accentLight, to: "/services" },
+                { icon: "book-open", label: "Online Courses", sub: "Industry-oriented · Certificate included", color: C.green, bg: C.greenLight, to: "/courses" },
+                { icon: "trending-up", label: "Career Support", sub: "LOR · Certificate · LinkedIn Recommendation", color: C.yellow, bg: C.yellowLight, to: "/contact" },
+              ].map(({ icon, label, sub, color, bg, to }) => (
+                <Link key={label} to={to} style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 14, padding: "1.1rem 1.4rem", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.sm, transition: "all 0.2s", textDecoration: "none" }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 8px 24px ${color}20`; e.currentTarget.style.transform = "translateX(4px)"; }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
@@ -83,7 +83,7 @@ export default function Home() {
                     <div style={{ fontSize: 12, color: C.muted, marginTop: 2 }}>{sub}</div>
                   </div>
                   <div style={{ color, fontSize: 18, fontWeight: 300 }}>→</div>
-                </div>
+                </Link>
               ))}
             </div>
           </RevealBox>

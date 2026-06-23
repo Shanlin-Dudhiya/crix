@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { C, APPLY_LINK, shadow } from "../theme";
-import { INTERNSHIP_DOMAINS, SERVICES } from "../data";
+import { INTERNSHIP_DOMAINS, SERVICES, COURSES } from "../data";
 import RevealBox from "../components/RevealBox";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "../components/Icons";
 
@@ -132,6 +132,9 @@ export default function Contact() {
                     </optgroup>
                     <optgroup label="IT Services">
                       {SERVICES.map(s => <option key={s.title} value={s.title}>{s.title}</option>)}
+                    </optgroup>
+                    <optgroup label="Courses">
+                      {COURSES.map(c => <option key={c.title} value={c.title}>{c.title}</option>)}
                     </optgroup>
                   </select>
                   <textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} placeholder="Tell us about yourself or your project requirements..." rows={4}

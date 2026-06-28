@@ -1,6 +1,6 @@
 import { C, shadow } from "../theme";
 
-const WHATSAPP_NUMBER = "919723223588";
+const WHATSAPP_NUMBER = "919712365388";
 
 function CheckIcon() {
   return (

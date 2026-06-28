@@ -62,4 +62,5 @@ export const NAV_LINKS = [
   { label: "Services", path: "/services" },
   { label: "Courses", path: "/courses" },
   { label: "Contact", path: "/contact" },
+  { label: "Payment", path: "/payment" },
 ];

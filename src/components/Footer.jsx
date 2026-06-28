@@ -20,7 +20,7 @@ export default function Footer() {
           {[
             { heading: "Internships", links: [["Web Development", "/internships"], ["Android Development", "/internships"]] },
             { heading: "Company", links: [["About Us", "/about"], ["Services", "/services"], ["Courses", "/courses"], ["Contact", "/contact"]] },
-            { heading: "Quick Links", links: [["Apply for Internship", APPLY_LINK], ["Get a Quote", "/contact"], ["Privacy Policy", "/privacy-policy"], ["Terms of Service", "/terms-of-service"]] },
+            { heading: "Quick Links", links: [["Apply for Internship", APPLY_LINK], ["Payment", "/payment"], ["Privacy Policy", "/privacy-policy"], ["Terms of Service", "/terms-of-service"]] },
           ].map(({ heading, links }) => (
             <div key={heading}>
               <h4 style={{ fontWeight: 700, fontSize: 14, color: "#fff", margin: "0 0 1.1rem", letterSpacing: "0.3px" }}>{heading}</h4>

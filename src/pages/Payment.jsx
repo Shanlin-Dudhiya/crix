@@ -180,7 +180,7 @@ export default function Payment() {
               Send on WhatsApp
             </a>
             <p style={{ fontSize: 12, opacity: 0.8, margin: "16px 0 0" }}>
-              WhatsApp: +91 97232 23588
+              WhatsApp: +91 97123 65388
             </p>
           </div>
 

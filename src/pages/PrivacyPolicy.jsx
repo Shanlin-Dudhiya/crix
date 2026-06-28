@@ -10,7 +10,7 @@ const SECTIONS = [
 • Internship domain preference
 • Any messages or project submissions you send us
 
-We do not collect payment information for internship registrations as the 15-day internship program is free.`,
+Payment information is collected securely for internship registrations as the internship program is a paid program.`,
   },
   {
     title: "2. How We Use Your Information",

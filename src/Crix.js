@@ -29,7 +29,7 @@ const STATS = [
 ];
 
 const WHY_US = [
-  { icon: "🆓", title: "100% Free Internship", desc: "No fees, no interview. Open to all eligible students across India." },
+  { icon: "💰", title: "Paid Internship", desc: "Affordable fee, no interview. Open to all eligible students across India." },
   { icon: "🏠", title: "Work From Anywhere", desc: "Fully virtual program — complete tasks from the comfort of your home." },
   { icon: "📜", title: "Verified Certificate", desc: "Industry-recognized digital certificate + Letter of Recommendation." },
   { icon: "🧑‍💼", title: "Mentor Support", desc: "Dedicated mentors guide you through every task and project." },
@@ -64,7 +64,7 @@ const COURSES = [
 
 const STEPS = [
   { n: "01", title: "Choose Your Domain", desc: "Pick from Web Dev, Android, AI/ML, Data Science, Cybersecurity, or Cloud Computing." },
-  { n: "02", title: "Register for Free", desc: "Fill in your details — no interview, no fees. Selection is open to all eligible students." },
+  { n: "02", title: "Register & Pay", desc: "Fill in your details and complete the payment. Selection is open to all eligible students." },
   { n: "03", title: "Complete Tasks", desc: "Receive project tasks via email. Build real applications with mentor guidance." },
   { n: "04", title: "Get Certified", desc: "Submit your work and receive a verified digital certificate + Letter of Recommendation." },
 ];
@@ -258,7 +258,7 @@ export default function CrixTechnology() {
 
             <RevealBox delay={0.2}>
               <p style={{ fontSize: 19, color: C.textSub, lineHeight: 1.8, margin: "0 0 2.5rem", maxWidth: 600 }}>
-                India's leading platform for <strong style={{ color: C.primary }}>free virtual internships</strong>, cutting-edge IT services, and industry-ready courses — built to launch real careers.
+                India's leading platform for <strong style={{ color: C.primary }}>paid virtual internships</strong>, cutting-edge IT services, and industry-ready courses — built to launch real careers.
               </p>
             </RevealBox>
 
@@ -320,7 +320,7 @@ export default function CrixTechnology() {
               Crix Technology is an Ahmedabad-based IT company that combines real-world IT services with a mission-driven internship program. We've trained over 15,000 students from 200+ colleges across India.
             </p>
             <p style={{ color: C.muted, fontSize: 16, lineHeight: 1.9, marginBottom: 32 }}>
-              Our belief: every student deserves access to industry-level experience — regardless of their background or budget. That's why every internship we offer is completely free.
+              Our belief: every student deserves access to industry-level experience — regardless of their background. That's why every internship we offer is affordable and accessible.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <button onClick={() => scrollTo("Internships")} style={{ background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, cursor: "pointer" }}>Our Internship Program</button>
@@ -428,7 +428,7 @@ export default function CrixTechnology() {
           <RevealBox>
             <div style={{ background: `linear-gradient(135deg, ${C.primary}12, ${C.accent}12)`, border: `1px solid ${C.primary}22`, borderRadius: 18, padding: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "1rem", textAlign: "center" }}>
               {[
-                { icon: "🆓", label: "100% Free" },
+                { icon: "💳", label: "Paid Program" },
                 { icon: "📜", label: "Verified Certificate" },
                 { icon: "🏠", label: "Work from Home" },
                 { icon: "🧑‍💼", label: "Letter of Recommendation" },
@@ -506,7 +506,7 @@ export default function CrixTechnology() {
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <div>
-                        <span style={{ fontSize: 20, fontWeight: 900, color: C.primary }}>FREE</span>
+                        <span style={{ fontSize: 20, fontWeight: 900, color: C.primary }}>PAID</span>
                         <span style={{ fontSize: 12, color: C.muted, marginLeft: 6 }}>with Internship</span>
                       </div>
                       <button onClick={() => scrollTo("Contact")} style={{ background: `${C.primary}20`, color: C.primary, border: `1px solid ${C.primary}40`, borderRadius: 8, padding: "7px 16px", fontWeight: 700, fontSize: 13, cursor: "pointer", transition: "all 0.2s" }}
@@ -590,9 +590,9 @@ export default function CrixTechnology() {
         <RevealBox>
           <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem", letterSpacing: "-1px" }}>Ready to Start Your Journey?</h2>
-            <p style={{ color: C.textSub, fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who have already transformed their careers with Crix Technology. Apply today — it's free.</p>
+            <p style={{ color: C.textSub, fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who have already transformed their careers with Crix Technology. Apply today and start your journey.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <button onClick={() => scrollTo("Internships")} style={{ background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 12, padding: "15px 36px", fontWeight: 700, fontSize: 16, cursor: "pointer", boxShadow: `0 4px 32px ${C.primary}40` }}>🎓 Apply for Free</button>
+              <button onClick={() => scrollTo("Internships")} style={{ background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 12, padding: "15px 36px", fontWeight: 700, fontSize: 16, cursor: "pointer", boxShadow: `0 4px 32px ${C.primary}40` }}>🎓 Apply Now</button>
               <button onClick={() => scrollTo("Contact")} style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 12, padding: "15px 36px", fontWeight: 600, fontSize: 16, cursor: "pointer" }}>Contact Us</button>
             </div>
           </div>
@@ -734,7 +734,7 @@ export default function CrixTechnology() {
         }}
           onMouseEnter={e => e.currentTarget.style.transform = "translateY(-3px) scale(1.04)"}
           onMouseLeave={e => e.currentTarget.style.transform = "none"}
-        >🎓 Apply Free</button>
+        >🎓 Apply Now</button>
       )}
 
       {/* ── RESPONSIVE STYLES ─────────────────────────────────────────────── */}

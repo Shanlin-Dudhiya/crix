@@ -40,7 +40,7 @@ export default function Home() {
 
             <RevealBox delay={0.15}>
               <p style={{ fontSize: 18, color: C.textSub, lineHeight: 1.8, margin: "0 0 2rem", maxWidth: 520 }}>
-                India's leading platform for <strong style={{ color: C.primary }}>free virtual internships</strong>, cutting-edge IT services, and industry-ready courses — built to launch real careers.
+                India's leading platform for <strong style={{ color: C.primary }}>paid virtual internships</strong>, cutting-edge IT services, and industry-ready courses — built to launch real careers.
               </p>
             </RevealBox>
 
@@ -51,7 +51,7 @@ export default function Home() {
                   color: "#fff", borderRadius: 12, padding: "14px 32px",
                   fontWeight: 700, fontSize: 16, textDecoration: "none",
                   boxShadow: `0 4px 24px ${C.primary}40`, display: "inline-block",
-                }}>Join for Free</a>
+                }}>Apply Now</a>
                 <Link to="/services" style={{ background: "#fff", color: C.text, border: `1px solid ${C.border}`, borderRadius: 12, padding: "14px 32px", fontWeight: 600, fontSize: 16, textDecoration: "none", boxShadow: shadow.sm }}>Our Services →</Link>
               </div>
             </RevealBox>
@@ -66,7 +66,7 @@ export default function Home() {
           <RevealBox delay={0.1}>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {[
-                { icon: "graduation-cap", label: "Free Virtual Internships", sub: "Web · AI · Android · Cloud · more", color: C.primary, bg: C.primaryLight, to: "/internships" },
+                { icon: "graduation-cap", label: "Paid Virtual Internships", sub: "Web · AI · Android · Cloud · more", color: C.primary, bg: C.primaryLight, to: "/internships" },
                 { icon: "monitor", label: "IT Services & Solutions", sub: "Web · App · AI · Digital Marketing", color: C.accent, bg: C.accentLight, to: "/services" },
                 { icon: "book-open", label: "Online Courses", sub: "Industry-oriented · Certificate included", color: C.green, bg: C.greenLight, to: "/courses" },
                 { icon: "trending-up", label: "Career Support", sub: "LOR · Certificate · LinkedIn Recommendation", color: C.yellow, bg: C.yellowLight, to: "/contact" },
@@ -134,7 +134,7 @@ export default function Home() {
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
               <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 14 }}>VIRTUAL INTERNSHIPS</span>
               <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1px" }}>Launch Your Tech Career</h2>
-              <p style={{ color: C.textSub, fontSize: 16, maxWidth: 520, margin: "0 auto" }}>15-day virtual internship. No fees. No interview. Choose your domain and get started today.</p>
+              <p style={{ color: C.textSub, fontSize: 16, maxWidth: 520, margin: "0 auto" }}>Virtual internship program. No interview. Choose your domain and get started today.</p>
             </div>
           </RevealBox>
 
@@ -153,7 +153,7 @@ export default function Home() {
                   </div>
                   <h3 style={{ fontWeight: 700, fontSize: 16, color: C.dark, margin: "0 0 6px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 16px" }}>{tech}</p>
-                  <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Free</a>
+                  <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Now</a>
                 </div>
               </RevealBox>
             ))}
@@ -206,9 +206,9 @@ export default function Home() {
         <RevealBox>
           <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem", letterSpacing: "-1px" }}>Ready to Start Your Journey?</h2>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who've transformed their careers with Crix Technology. Apply for our free 15-day internship today.</p>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who've transformed their careers with Crix Technology. Apply for our paid internship today.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply for Free</a>
+              <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply Now</a>
               <Link to="/contact" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 12, padding: "14px 36px", fontWeight: 600, fontSize: 16, textDecoration: "none" }}>Contact Us</Link>
             </div>
           </div>

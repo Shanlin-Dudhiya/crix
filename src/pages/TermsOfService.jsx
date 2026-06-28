@@ -17,7 +17,7 @@ By applying, you confirm that you meet the eligibility criteria.`,
   },
   {
     title: "3. Internship Program",
-    content: `Crix Technology offers a free 15-day virtual internship program. By enrolling you agree to:
+    content: `Crix Technology offers a paid virtual internship program. By enrolling you agree to:
 • Complete assigned tasks honestly and on time
 • Submit original work — plagiarism will result in immediate disqualification
 • Maintain professional conduct in all communications
@@ -55,7 +55,7 @@ Certificates and Letters of Recommendation are issued only upon satisfactory com
 • Loss of data or opportunities resulting from technical issues
 • Actions taken by third-party platforms we integrate with (e.g., email providers)
 
-Our total liability in any matter shall not exceed the amount you paid for our services (which is zero for the free 15-day internship program).`,
+Our total liability in any matter shall not exceed the amount you paid for our services.`,
   },
   {
     title: "9. Termination",

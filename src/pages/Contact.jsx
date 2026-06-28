@@ -96,7 +96,7 @@ export default function Contact() {
             {/* Internship CTA box */}
             <div style={{ marginTop: "2rem", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, borderRadius: 16, padding: "1.75rem" }}>
               <div style={{ fontWeight: 800, color: "#fff", fontSize: 16, marginBottom: 8 }}>Apply for Internship</div>
-              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: 16 }}>Free 15-day program, no interview. Click below to apply directly via our Google Form.</p>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: 16 }}>Paid internship program, no interview. Click below to apply directly via our Google Form.</p>
               <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 9, padding: "10px 22px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</a>
             </div>
           </RevealBox>

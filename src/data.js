@@ -50,7 +50,7 @@ export const TEAM = [
 
 export const STEPS = [
   { n: "01", title: "Choose Your Domain", desc: "Pick from Web Dev, Android, AI/ML, Data Science, Cybersecurity, or Cloud Computing." },
-  { n: "02", title: "Register for Free", desc: "Fill in your details — no interview, no fees. Selection is open to all eligible students." },
+  { n: "02", title: "Register & Pay", desc: "Fill in your details and complete the payment. Selection is open to all eligible students." },
   { n: "03", title: "Complete Tasks", desc: "Receive project tasks via email. Build real applications with mentor guidance." },
   { n: "04", title: "Get Certified", desc: "Submit your work and receive a verified digital certificate + Letter of Recommendation." },
 ];

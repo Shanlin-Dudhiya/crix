@@ -153,7 +153,11 @@ export default function Home() {
                   </div>
                   <h3 style={{ fontWeight: 700, fontSize: 16, color: C.dark, margin: "0 0 6px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 16px" }}>{tech}</p>
-                  <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Now</a>
+                  {title === "Android Development" ? (
+                    <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Now</Link>
+                  ) : (
+                    <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Now</a>
+                  )}
                 </div>
               </RevealBox>
             ))}

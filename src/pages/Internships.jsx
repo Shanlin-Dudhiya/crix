@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { C, APPLY_LINK, shadow } from "../theme";
 import { INTERNSHIP_DOMAINS, STEPS } from "../data";
 import RevealBox from "../components/RevealBox";
@@ -78,7 +79,11 @@ export default function Internships() {
                   <h3 style={{ fontWeight: 800, fontSize: 18, color: C.dark, margin: "0 0 8px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 6px" }}><strong>Tech Stack:</strong> {tech}</p>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 20px" }}>Duration: {duration}</p>
-                  <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Join Now →</a>
+                  {title === "Android Development" ? (
+                    <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</Link>
+                  ) : (
+                    <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Join Now →</a>
+                  )}
                 </div>
               </RevealBox>
             ))}

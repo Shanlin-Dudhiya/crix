@@ -1,7 +1,7 @@
 import { C, shadow } from "../theme";
 
+const CALL_NUMBER = { number: "918141810384", display: "+91 81418 10384" };
 const WA_NUMBERS = [
-  { number: "918141810384", display: "+91 81418 10384" },
   { number: "919723223588", display: "+91 97232 23588" },
 ];
 
@@ -161,6 +161,25 @@ export default function Payment() {
               After paying, tap a button below to open WhatsApp and send your payment screenshot to confirm your enrollment.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
+              <a
+                href={`tel:+${CALL_NUMBER.number}`}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 10,
+                  background: "#fff", color: "#1a73e8",
+                  borderRadius: 12, padding: "14px 28px",
+                  fontWeight: 800, fontSize: 16, textDecoration: "none",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+                  transition: "transform 0.2s, box-shadow 0.2s",
+                  width: "100%", maxWidth: 320, justifyContent: "center",
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.2)"; }}
+                onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.15)"; }}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" fill="#1a73e8"/>
+                </svg>
+                Call · {CALL_NUMBER.display}
+              </a>
               {WA_NUMBERS.map(({ number, display }) => (
                 <a
                   key={number}

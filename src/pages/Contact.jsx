@@ -6,9 +6,10 @@ import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "../
 
 const CONTACT_INFO = [
   { Icon: PhoneIcon, label: "Call / WhatsApp", value: "9723223588", href: "tel:9723223588" },
+  { Icon: PhoneIcon, label: "Call / WhatsApp", value: "9712365388", href: "tel:9712365388" },
   { Icon: MailIcon, label: "Email Us", value: "crixtechnology@gmail.com", href: "mailto:crixtechnology@gmail.com" },
   { Icon: MapPinIcon, label: "Location", value: "Ahmedabad, Gujarat, India", href: null },
-  { Icon: ClockIcon, label: "Working Hours", value: "Mon–Sat, 9am–6pm IST", href: null },
+  { Icon: ClockIcon, label: "Working Hours", value: "Mon–Sat, 10am–6pm IST", href: null },
 ];
 
 export default function Contact() {
@@ -146,7 +147,7 @@ export default function Contact() {
                     onMouseEnter={e => { if (!loading) e.target.style.opacity = "0.9"; }}
                     onMouseLeave={e => e.target.style.opacity = "1"}
                   >{loading ? "Sending..." : "Send Message →"}</button>
-                  <p style={{ textAlign: "center", fontSize: 13, color: C.muted, margin: 0 }}>Or call us: <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9723223588</a></p>
+                  <p style={{ textAlign: "center", fontSize: 13, color: C.muted, margin: 0 }}>Or call us: <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9723223588</a>, <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9712365388</a></p>
                 </form>
               )}
             </div>

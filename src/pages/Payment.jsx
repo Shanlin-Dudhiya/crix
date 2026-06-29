@@ -1,6 +1,9 @@
 import { C, shadow } from "../theme";
 
-const WHATSAPP_NUMBER = "919712365388";
+const WA_NUMBERS = [
+  { number: "918141810384", display: "+91 81418 10384" },
+  { number: "919824779516", display: "+91 98247 79516" },
+];
 
 function CheckIcon() {
   return (
@@ -19,9 +22,9 @@ const STEPS = [
 ];
 
 export default function Payment() {
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  const waMessage = encodeURIComponent(
     "Hi! I have completed the payment for Crix Technology. Please find my payment screenshot attached."
-  )}`;
+  );
 
   return (
     <div style={{ background: C.bg, minHeight: "100vh", padding: "60px 16px 80px" }}>
@@ -155,33 +158,36 @@ export default function Payment() {
               Send Payment Screenshot
             </h3>
             <p style={{ fontSize: 14, opacity: 0.9, margin: "0 0 24px", lineHeight: 1.5 }}>
-              After paying, tap the button below to open WhatsApp and send your payment screenshot to confirm your enrollment.
+              After paying, tap a button below to open WhatsApp and send your payment screenshot to confirm your enrollment.
             </p>
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: 10,
-                background: "#fff", color: "#128c7e",
-                borderRadius: 12, padding: "14px 28px",
-                fontWeight: 800, fontSize: 16, textDecoration: "none",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
-                transition: "transform 0.2s, box-shadow 0.2s",
-              }}
-              onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.2)"; }}
-              onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.15)"; }}
-            >
-              <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
-                <path fillRule="evenodd" clipRule="evenodd"
-                  d="M24 10C16.268 10 10 16.268 10 24c0 2.49.666 4.825 1.828 6.838L10 38l7.394-1.8A13.94 13.94 0 0024 38c7.732 0 14-6.268 14-14S31.732 10 24 10zm0 25.6a11.56 11.56 0 01-5.89-1.606l-.422-.251-4.388 1.068 1.1-4.276-.277-.44A11.6 11.6 0 0112.4 24c0-6.4 5.2-11.6 11.6-11.6S35.6 17.6 35.6 24 30.4 35.6 24 35.6zm6.36-8.68c-.348-.175-2.062-1.017-2.382-1.133-.32-.116-.554-.175-.787.175-.233.349-.902 1.133-1.105 1.367-.203.233-.406.262-.754.087-.349-.175-1.473-.543-2.806-1.73-1.037-.924-1.737-2.065-1.94-2.413-.203-.35-.022-.538.153-.713.157-.157.349-.407.523-.612.175-.204.233-.35.35-.583.116-.233.058-.437-.029-.612-.087-.174-.787-1.895-1.078-2.594-.284-.682-.573-.59-.787-.6l-.67-.012c-.233 0-.612.087-.932.437-.32.349-1.222 1.194-1.222 2.913s1.251 3.38 1.426 3.614c.174.233 2.463 3.762 5.966 5.277.834.36 1.485.574 1.993.735.837.266 1.6.228 2.202.138.672-.1 2.062-.843 2.352-1.658.29-.814.29-1.512.204-1.658-.087-.145-.32-.233-.67-.408z"
-                  fill="#128c7e" />
-              </svg>
-              Send on WhatsApp
-            </a>
-            <p style={{ fontSize: 12, opacity: 0.8, margin: "16px 0 0" }}>
-              WhatsApp: +91 97123 65388
-            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
+              {WA_NUMBERS.map(({ number, display }) => (
+                <a
+                  key={number}
+                  href={`https://wa.me/${number}?text=${waMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: 10,
+                    background: "#fff", color: "#128c7e",
+                    borderRadius: 12, padding: "14px 28px",
+                    fontWeight: 800, fontSize: 16, textDecoration: "none",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+                    transition: "transform 0.2s, box-shadow 0.2s",
+                    width: "100%", maxWidth: 320, justifyContent: "center",
+                  }}
+                  onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.2)"; }}
+                  onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.15)"; }}
+                >
+                  <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd"
+                      d="M24 10C16.268 10 10 16.268 10 24c0 2.49.666 4.825 1.828 6.838L10 38l7.394-1.8A13.94 13.94 0 0024 38c7.732 0 14-6.268 14-14S31.732 10 24 10zm0 25.6a11.56 11.56 0 01-5.89-1.606l-.422-.251-4.388 1.068 1.1-4.276-.277-.44A11.6 11.6 0 0112.4 24c0-6.4 5.2-11.6 11.6-11.6S35.6 17.6 35.6 24 30.4 35.6 24 35.6zm6.36-8.68c-.348-.175-2.062-1.017-2.382-1.133-.32-.116-.554-.175-.787.175-.233.349-.902 1.133-1.105 1.367-.203.233-.406.262-.754.087-.349-.175-1.473-.543-2.806-1.73-1.037-.924-1.737-2.065-1.94-2.413-.203-.35-.022-.538.153-.713.157-.157.349-.407.523-.612.175-.204.233-.35.35-.583.116-.233.058-.437-.029-.612-.087-.174-.787-1.895-1.078-2.594-.284-.682-.573-.59-.787-.6l-.67-.012c-.233 0-.612.087-.932.437-.32.349-1.222 1.194-1.222 2.913s1.251 3.38 1.426 3.614c.174.233 2.463 3.762 5.966 5.277.834.36 1.485.574 1.993.735.837.266 1.6.228 2.202.138.672-.1 2.062-.843 2.352-1.658.29-.814.29-1.512.204-1.658-.087-.145-.32-.233-.67-.408z"
+                      fill="#128c7e" />
+                  </svg>
+                  Send on WhatsApp · {display}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Assurance */}

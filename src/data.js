@@ -19,8 +19,6 @@ export const COURSES = [
   { title: "Android App", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
   { title: "Node Js Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
   { title: "React Js Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
-  { title: "Python Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
-  { title: "Java Programming", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
   { title: "SQL Database", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
   { title: "Database", duration: "6 months", level: "Beginner → Pro", badge: null, badgeColor: null },
 ];

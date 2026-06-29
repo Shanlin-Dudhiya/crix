@@ -14,6 +14,7 @@ export default function Footer() {
               Your one-stop solution for IT services, virtual internships, and future-ready skills training. Based in Ahmedabad, serving all of India.
             </p>
             <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>9723223588</a><br />
+            <a href="tel:9712365388" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>9712365388</a><br />
             <a href="mailto:crixtechnology@gmail.com" style={{ color: C.primary, fontWeight: 600, textDecoration: "none", fontSize: 14, marginTop: 6, display: "inline-block" }}>crixtechnology@gmail.com</a>
           </div>
 

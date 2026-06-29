@@ -2,7 +2,7 @@ import { C, shadow } from "../theme";
 
 const WA_NUMBERS = [
   { number: "918141810384", display: "+91 81418 10384" },
-  { number: "919824779516", display: "+91 98247 79516" },
+  { number: "919723223588", display: "+91 97232 23588" },
 ];
 
 function CheckIcon() {

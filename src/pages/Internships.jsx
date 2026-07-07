@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { C, APPLY_LINK, shadow } from "../theme";
+import { C, shadow } from "../theme";
 import { INTERNSHIP_DOMAINS, STEPS } from "../data";
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
@@ -25,7 +25,7 @@ export default function Internships() {
           <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 18 }}>VIRTUAL INTERNSHIP PROGRAM</span>
           <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1.5px" }}>Paid Virtual Internships</h1>
           <p style={{ color: C.textSub, fontSize: 18, maxWidth: 600, margin: "0 auto 2rem", lineHeight: 1.75 }}>Virtual internship program. No interview. Real experience. Choose your domain and join now.</p>
-          <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: `0 4px 24px ${C.primary}40` }}>Join Now</a>
+          <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: `0 4px 24px ${C.primary}40` }}>Join Now</Link>
         </RevealBox>
       </section>
 
@@ -79,11 +79,7 @@ export default function Internships() {
                   <h3 style={{ fontWeight: 800, fontSize: 18, color: C.dark, margin: "0 0 8px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 6px" }}><strong>Tech Stack:</strong> {tech}</p>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 20px" }}>Duration: {duration}</p>
-                  {title === "Android Development" ? (
-                    <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</Link>
-                  ) : (
-                    <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Join Now →</a>
-                  )}
+                  <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</Link>
                 </div>
               </RevealBox>
             ))}
@@ -126,9 +122,9 @@ export default function Internships() {
       <section style={{ padding: "5rem 2.5rem", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})` }}>
         <RevealBox>
           <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Don't Miss the June-July 2026 Batch</h2>
+            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.4rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem" }}>Don't Miss This Batch</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7, marginBottom: 28 }}>Limited seats are filling up fast. Apply today for our paid internship program — no interview required.</p>
-            <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 40px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply Now</a>
+            <Link to="/contact" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 40px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply Now</Link>
           </div>
         </RevealBox>
       </section>

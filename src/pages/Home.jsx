@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { C, APPLY_LINK, shadow } from "../theme";
+import { C, shadow } from "../theme";
 import { SERVICES, INTERNSHIP_DOMAINS, TESTIMONIALS } from "../data"; //STATS,
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
@@ -27,7 +27,7 @@ export default function Home() {
             <RevealBox>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1px solid ${C.border}`, borderRadius: 50, padding: "6px 18px", marginBottom: 28, boxShadow: shadow.sm }}>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.green, display: "inline-block" }} />
-                <span style={{ fontSize: 13, color: C.textSub, fontWeight: 600 }}>June-July 2026 Batch — Now Open</span>
+                <span style={{ fontSize: 13, color: C.textSub, fontWeight: 600 }}>Internship Applications Open</span>
               </div>
             </RevealBox>
 
@@ -46,12 +46,12 @@ export default function Home() {
 
             <RevealBox delay={0.2}>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
-                <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{
+                <Link to="/contact" style={{
                   background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`,
                   color: "#fff", borderRadius: 12, padding: "14px 32px",
                   fontWeight: 700, fontSize: 16, textDecoration: "none",
                   boxShadow: `0 4px 24px ${C.primary}40`, display: "inline-block",
-                }}>Apply Now</a>
+                }}>Apply Now</Link>
                 <Link to="/services" style={{ background: "#fff", color: C.text, border: `1px solid ${C.border}`, borderRadius: 12, padding: "14px 32px", fontWeight: 600, fontSize: 16, textDecoration: "none", boxShadow: shadow.sm }}>Our Services →</Link>
               </div>
             </RevealBox>
@@ -153,11 +153,7 @@ export default function Home() {
                   </div>
                   <h3 style={{ fontWeight: 700, fontSize: 16, color: C.dark, margin: "0 0 6px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 16px" }}>{tech}</p>
-                  {title === "Android Development" ? (
-                    <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Now</Link>
-                  ) : (
-                    <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Now</a>
-                  )}
+                  <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${color}, ${C.accent})`, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 700, fontSize: 13, textDecoration: "none" }}>Apply Now</Link>
                 </div>
               </RevealBox>
             ))}
@@ -212,8 +208,7 @@ export default function Home() {
             <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem", letterSpacing: "-1px" }}>Ready to Start Your Journey?</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who've transformed their careers with Crix Technology. Apply for our paid internship today.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply Now</a>
-              <Link to="/contact" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 12, padding: "14px 36px", fontWeight: 600, fontSize: 16, textDecoration: "none" }}>Contact Us</Link>
+              <Link to="/contact" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply Now</Link>
             </div>
           </div>
         </RevealBox>

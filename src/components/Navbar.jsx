@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { C, APPLY_LINK, shadow } from "../theme";
+import { C, shadow } from "../theme";
 import { NAV_LINKS } from "../data";
 
 export default function Navbar() {
@@ -18,12 +18,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Announcement bar */}
-      <div style={{ background: `linear-gradient(90deg, ${C.primary}, ${C.accent})`, padding: "9px 1rem", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#fff", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "8px" }}>
-        <span>June-July 2026 Internship Batch is OPEN — Limited Seats!</span>
-        <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 20, padding: "2px 14px", color: "#fff", fontSize: 12, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}>Apply Now →</a>
-      </div>
-
       <nav style={{
         position: "sticky", top: 0, zIndex: 200,
         background: scrolled ? "rgba(255,255,255,0.97)" : "#fff",
@@ -55,7 +49,7 @@ export default function Navbar() {
               >{label}</Link>
             );
           })}
-          <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{
+          <Link to="/contact" style={{
             marginLeft: 8,
             background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`,
             color: "#fff", borderRadius: 9,
@@ -65,7 +59,7 @@ export default function Navbar() {
           }}
             onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
             onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-          >Apply Now</a>
+          >Apply Now</Link>
         </div>
 
         {/* Hamburger */}
@@ -76,11 +70,11 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div style={{ position: "fixed", top: 112, left: 0, right: 0, background: "#fff", zIndex: 199, padding: "1.25rem 1.5rem", display: "flex", flexDirection: "column", gap: 4, borderBottom: `1px solid ${C.border}`, boxShadow: shadow.lg }}>
+        <div style={{ position: "fixed", top: 66, left: 0, right: 0, background: "#fff", zIndex: 199, padding: "1.25rem 1.5rem", display: "flex", flexDirection: "column", gap: 4, borderBottom: `1px solid ${C.border}`, boxShadow: shadow.lg }}>
           {NAV_LINKS.map(({ label, path }) => (
             <Link key={label} to={path} style={{ textDecoration: "none", color: C.text, fontSize: 15, fontWeight: 600, padding: "10px 12px", borderRadius: 8, background: location.pathname === path ? C.primaryLight : "transparent" }}>{label}</Link>
           ))}
-          <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 9, padding: "13px", fontWeight: 700, fontSize: 15, cursor: "pointer", marginTop: 10, textAlign: "center", textDecoration: "none" }}>Apply for Internship →</a>
+          <Link to="/contact" style={{ background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 9, padding: "13px", fontWeight: 700, fontSize: 15, cursor: "pointer", marginTop: 10, textAlign: "center", textDecoration: "none" }}>Apply for Internship →</Link>
         </div>
       )}
 

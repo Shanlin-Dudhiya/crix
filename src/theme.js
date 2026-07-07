@@ -21,8 +21,6 @@ export const C = {
   redLight: "#fee2e2",
 };
 
-export const APPLY_LINK = "https://forms.gle/x6SDacVzRR6KRbK2A";
-
 export const shadow = {
   sm: "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)",
   md: "0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04)",

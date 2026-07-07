@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { C, APPLY_LINK, shadow } from "../theme";
+import { C, shadow } from "../theme";
 import { INTERNSHIP_DOMAINS, SERVICES, COURSES } from "../data";
 import RevealBox from "../components/RevealBox";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "../components/Icons";
@@ -83,7 +83,7 @@ export default function Contact() {
             <p style={{ color: C.textSub, fontSize: 15, lineHeight: 1.85, marginBottom: "2rem" }}>We respond to all inquiries within 24 hours. Feel free to reach out via call, email, or WhatsApp.</p>
 
             {CONTACT_INFO.map(({ Icon, label, value, href }) => (
-              <div key={label} style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 22 }}>
+              <div key={value} style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 22 }}>
                 <div style={{ width: 48, height: 48, borderRadius: 13, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: C.primary }}>
                   <Icon size={20} />
                 </div>
@@ -97,8 +97,7 @@ export default function Contact() {
             {/* Internship CTA box */}
             <div style={{ marginTop: "2rem", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, borderRadius: 16, padding: "1.75rem" }}>
               <div style={{ fontWeight: 800, color: "#fff", fontSize: 16, marginBottom: 8 }}>Apply for Internship</div>
-              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: 16 }}>Paid internship program, no interview. Click below to apply directly via our Google Form.</p>
-              <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#fff", color: C.primary, borderRadius: 9, padding: "10px 22px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Apply Now →</a>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", lineHeight: 1.7 }}>Paid internship program, no interview. Fill out the form to your right and we'll get back to you within 24 hours.</p>
             </div>
           </RevealBox>
 

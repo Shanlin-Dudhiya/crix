@@ -1,4 +1,4 @@
-import { C, APPLY_LINK, shadow } from "../theme";
+import { C, shadow } from "../theme";
 import { TEAM, TESTIMONIALS } from "../data";
 import RevealBox from "../components/RevealBox";
 

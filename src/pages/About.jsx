@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { C, APPLY_LINK, shadow } from "../theme";
+import { C, shadow } from "../theme";
 import { SERVICES } from "../data";
 import RevealBox from "../components/RevealBox";
 import Icon from "../components/Icons";
@@ -45,7 +45,7 @@ export default function About() {
             <p style={{ color: C.textSub, fontSize: 16, lineHeight: 1.9, marginBottom: 32 }}>
               So we built our internship program — a paid virtual experience designed around real tasks that mirror actual industry work. Today, we've trained over 15,000 students from 200+ colleges across India.
             </p>
-            <a href={APPLY_LINK} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, textDecoration: "none", boxShadow: `0 4px 16px ${C.primary}35` }}>Join Our Program →</a>
+            <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, textDecoration: "none", boxShadow: `0 4px 16px ${C.primary}35` }}>Join Our Program →</Link>
           </RevealBox>
 
           {/* <RevealBox delay={0.15}>

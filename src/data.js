@@ -1,17 +1,18 @@
 import { C } from "./theme";
 
 export const INTERNSHIP_DOMAINS = [
-  { icon: "globe", title: "Web Development", tech: "HTML · CSS · JavaScript · React", duration: "15 Days / 3 Month / 6 Month", seats: "Open", color: C.primary },
-  { icon: "smartphone", title: "Android Development", tech: "Java · Kotlin · React Native", duration: "15 Days / 3 Month / 6 Month", seats: "Open", color: "#06b6d4" },
+  { icon: "globe", title: "Web Development", tech: "HTML · CSS · JavaScript · React", duration: "15 Days / 3 Month / 6 Month", color: C.primary },
+  { icon: "smartphone", title: "Android Development", tech: "Java · Kotlin · React Native", duration: "15 Days / 3 Month / 6 Month", color: "#06b6d4" },
 ];
 
 export const SERVICES = [
-  { icon: "monitor", title: "Web Development", desc: "Modern, responsive & SEO-friendly websites that grow your business online.", color: C.primary },
-  { icon: "smartphone", title: "App Development", desc: "Custom Android & iOS apps with seamless user experiences.", color: C.accent },
-  { icon: "cpu", title: "AI Solutions", desc: "Smart automation and AI integrations to accelerate your operations.", color: "#0891b2" },
-  { icon: "megaphone", title: "Digital Marketing", desc: "SEO, social media & paid campaigns that bring real, measurable results.", color: C.yellow },
-  { icon: "graduation-cap", title: "Training & Courses", desc: "Industry-oriented courses designed by working professionals.", color: C.green },
-  { icon: "briefcase", title: "IT Consulting", desc: "Strategic technology guidance tailored to your business goals.", color: C.red },
+  { icon: "monitor", title: "Website Development", desc: "Modern, responsive & SEO-friendly business websites — from landing pages to full custom web platforms.", color: C.primary, link: "/contact" },
+  { icon: "smartphone", title: "App Development", desc: "Custom Android & iOS apps for businesses and startups, built with seamless, modern user experiences.", color: C.accent, link: "/contact" },
+  { icon: "megaphone", title: "Digital Marketing", desc: "SEO, social media & paid campaigns that bring real, measurable results.", color: C.yellow, link: "/contact" },
+  { icon: "graduation-cap", title: "Student Internship", desc: "Paid virtual internships for students in Web Development & Android — real tasks, mentor support, certificate.", color: C.green, link: "/internships", cta: "Learn More" },
+  { icon: "cpu", title: "AI Solutions", desc: "Smart automation and AI integrations to accelerate your operations.", color: "#0891b2", link: "/contact" },
+  { icon: "book-open", title: "Training & Courses", desc: "Industry-oriented courses designed by working professionals.", color: "#a855f7", link: "/courses", cta: "View Courses" },
+  { icon: "briefcase", title: "IT Consulting", desc: "Strategic technology guidance tailored to your business goals.", color: C.red, link: "/contact" },
 ];
 
 export const COURSES = [
@@ -56,8 +57,8 @@ export const STEPS = [
 export const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Internships", path: "/internships" },
   { label: "Services", path: "/services" },
+  { label: "Internships", path: "/internships" },
   { label: "Courses", path: "/courses" },
   { label: "Contact", path: "/contact" },
 ];

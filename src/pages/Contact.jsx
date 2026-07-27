@@ -5,8 +5,8 @@ import RevealBox from "../components/RevealBox";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "../components/Icons";
 
 const CONTACT_INFO = [
-  { Icon: PhoneIcon, label: "Call / WhatsApp", value: "9723223588", href: "tel:9723223588" },
-  { Icon: PhoneIcon, label: "Call / WhatsApp", value: "9712365388", href: "tel:9712365388" },
+  { Icon: PhoneIcon, label: "Call", value: "9723223588", href: "tel:9723223588", whatsapp: "https://wa.me/919723223588" },
+  { Icon: PhoneIcon, label: "Call", value: "9712365388", href: "tel:9712365388", whatsapp: "https://wa.me/919712365388" },
   { Icon: MailIcon, label: "Email Us", value: "crixtechnology@gmail.com", href: "mailto:crixtechnology@gmail.com" },
   { Icon: MapPinIcon, label: "Location", value: "Ahmedabad, Gujarat, India", href: null },
   { Icon: ClockIcon, label: "Working Hours", value: "Mon–Sat, 10am–6pm IST", href: null },
@@ -82,23 +82,22 @@ export default function Contact() {
             <h2 style={{ fontSize: "clamp(1.6rem, 3vw, 2rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-0.5px" }}>Contact Information</h2>
             <p style={{ color: C.textSub, fontSize: 15, lineHeight: 1.85, marginBottom: "2rem" }}>We respond to all inquiries within 24 hours. Feel free to reach out via call, email, or WhatsApp.</p>
 
-            {CONTACT_INFO.map(({ Icon, label, value, href }) => (
+            {CONTACT_INFO.map(({ Icon, label, value, href, whatsapp }) => (
               <div key={value} style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 22 }}>
                 <div style={{ width: 48, height: 48, borderRadius: 13, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: C.primary }}>
                   <Icon size={20} />
                 </div>
                 <div>
                   <div style={{ fontSize: 12, color: C.muted, marginBottom: 2, fontWeight: 600, letterSpacing: "0.3px" }}>{label}</div>
-                  {href ? <a href={href} style={{ color: C.primary, fontWeight: 700, fontSize: 15, textDecoration: "none" }}>{value}</a> : <div style={{ color: C.dark, fontWeight: 600, fontSize: 15 }}>{value}</div>}
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                    {href ? <a href={href} style={{ color: C.primary, fontWeight: 700, fontSize: 15, textDecoration: "none" }}>{value}</a> : <div style={{ color: C.dark, fontWeight: 600, fontSize: 15 }}>{value}</div>}
+                    {whatsapp && (
+                      <a href={whatsapp} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: C.green, fontWeight: 700, fontSize: 13, textDecoration: "none", background: C.greenLight, padding: "3px 10px", borderRadius: 50 }}>WhatsApp</a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
-
-            {/* Internship CTA box */}
-            <div style={{ marginTop: "2rem", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, borderRadius: 16, padding: "1.75rem" }}>
-              <div style={{ fontWeight: 800, color: "#fff", fontSize: 16, marginBottom: 8 }}>Apply for Internship</div>
-              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", lineHeight: 1.7 }}>Paid internship program, no interview. Fill out the form to your right and we'll get back to you within 24 hours.</p>
-            </div>
           </RevealBox>
 
           {/* Right form */}
@@ -146,7 +145,7 @@ export default function Contact() {
                     onMouseEnter={e => { if (!loading) e.target.style.opacity = "0.9"; }}
                     onMouseLeave={e => e.target.style.opacity = "1"}
                   >{loading ? "Sending..." : "Send Message →"}</button>
-                  <p style={{ textAlign: "center", fontSize: 13, color: C.muted, margin: 0 }}>Or call us: <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9723223588</a>, <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9712365388</a></p>
+                  <p style={{ textAlign: "center", fontSize: 13, color: C.muted, margin: 0 }}>Or call us: <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700 }}>9723223588</a>, <a href="tel:9712365388" style={{ color: C.primary, fontWeight: 700 }}>9712365388</a> · <a href="https://wa.me/919723223588" target="_blank" rel="noreferrer" style={{ color: C.green, fontWeight: 700 }}>WhatsApp us</a></p>
                 </form>
               )}
             </div>

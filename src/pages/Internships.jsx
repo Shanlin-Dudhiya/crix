@@ -64,17 +64,16 @@ export default function Internships() {
           </RevealBox>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
-            {INTERNSHIP_DOMAINS.map(({ icon, title, tech, duration, seats, color }, i) => (
+            {INTERNSHIP_DOMAINS.map(({ icon, title, tech, duration, color }, i) => (
               <RevealBox key={title} delay={i * 0.07}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 18, padding: "2rem", boxShadow: shadow.sm, transition: "all 0.25s", height: "100%" }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 16px 48px ${color}18`; e.currentTarget.style.transform = "translateY(-5px)"; }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 18 }}>
+                  <div style={{ marginBottom: 18 }}>
                     <div style={{ width: 58, height: 58, borderRadius: 16, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", color }}>
                       <Icon name={icon} size={26} />
                     </div>
-                    <span style={{ fontSize: 11, fontWeight: 700, padding: "4px 12px", borderRadius: 50, background: seats === "Limited" ? C.yellowLight : C.greenLight, color: seats === "Limited" ? "#92400e" : "#065f46" }}>{seats === "Limited" ? "Limited Seats" : "Open"}</span>
                   </div>
                   <h3 style={{ fontWeight: 800, fontSize: 18, color: C.dark, margin: "0 0 8px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 6px" }}><strong>Tech Stack:</strong> {tech}</p>

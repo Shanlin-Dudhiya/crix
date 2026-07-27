@@ -27,20 +27,20 @@ export default function Home() {
             <RevealBox>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1px solid ${C.border}`, borderRadius: 50, padding: "6px 18px", marginBottom: 28, boxShadow: shadow.sm }}>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.green, display: "inline-block" }} />
-                <span style={{ fontSize: 13, color: C.textSub, fontWeight: 600 }}>Internship Applications Open</span>
+                <span style={{ fontSize: 13, color: C.textSub, fontWeight: 600 }}>Client Projects & Student Internships</span>
               </div>
             </RevealBox>
 
             <RevealBox delay={0.1}>
               <h1 style={{ fontSize: "clamp(2.4rem, 5vw, 3.8rem)", fontWeight: 900, lineHeight: 1.1, margin: "0 0 1.25rem", letterSpacing: "-2px", color: C.dark }}>
-                Elevate Your Career<br />
-                <span style={{ background: `linear-gradient(90deg, ${C.primary}, ${C.accent})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>with Crix Technology.</span>
+                Websites, Apps & Careers<br />
+                <span style={{ background: `linear-gradient(90deg, ${C.primary}, ${C.accent})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Built by Crix Technology.</span>
               </h1>
             </RevealBox>
 
             <RevealBox delay={0.15}>
               <p style={{ fontSize: 18, color: C.textSub, lineHeight: 1.8, margin: "0 0 2rem", maxWidth: 520 }}>
-                India's leading platform for <strong style={{ color: C.primary }}>paid virtual internships</strong>, cutting-edge IT services, and industry-ready courses — built to launch real careers.
+                We design and build <strong style={{ color: C.primary }}>websites & applications for businesses</strong>, and run <strong style={{ color: C.accent }}>paid virtual internships</strong> for students — one team, two missions, real results.
               </p>
             </RevealBox>
 
@@ -51,8 +51,8 @@ export default function Home() {
                   color: "#fff", borderRadius: 12, padding: "14px 32px",
                   fontWeight: 700, fontSize: 16, textDecoration: "none",
                   boxShadow: `0 4px 24px ${C.primary}40`, display: "inline-block",
-                }}>Apply Now</Link>
-                <Link to="/services" style={{ background: "#fff", color: C.text, border: `1px solid ${C.border}`, borderRadius: 12, padding: "14px 32px", fontWeight: 600, fontSize: 16, textDecoration: "none", boxShadow: shadow.sm }}>Our Services →</Link>
+                }}>Get a Quote</Link>
+                <Link to="/internships" style={{ background: "#fff", color: C.text, border: `1px solid ${C.border}`, borderRadius: 12, padding: "14px 32px", fontWeight: 600, fontSize: 16, textDecoration: "none", boxShadow: shadow.sm }}>Explore Internships →</Link>
               </div>
             </RevealBox>
 
@@ -66,10 +66,11 @@ export default function Home() {
           <RevealBox delay={0.1}>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {[
-                { icon: "graduation-cap", label: "Paid Virtual Internships", sub: "Web · AI · Android · Cloud · more", color: C.primary, bg: C.primaryLight, to: "/internships" },
-                { icon: "monitor", label: "IT Services & Solutions", sub: "Web · App · AI · Digital Marketing", color: C.accent, bg: C.accentLight, to: "/services" },
-                { icon: "book-open", label: "Online Courses", sub: "Industry-oriented · Certificate included", color: C.green, bg: C.greenLight, to: "/courses" },
-                { icon: "trending-up", label: "Career Support", sub: "LOR · Certificate · LinkedIn Recommendation", color: C.yellow, bg: C.yellowLight, to: "/contact" },
+                { icon: "monitor", label: "Website Development", sub: "For businesses & startups · Custom builds", color: C.primary, bg: C.primaryLight, to: "/services" },
+                { icon: "smartphone", label: "App Development", sub: "Android & iOS · Client projects", color: C.accent, bg: C.accentLight, to: "/services" },
+                { icon: "megaphone", label: "Digital Marketing", sub: "SEO · Social Media · Paid Campaigns", color: "#f59e0b", bg: C.yellowLight, to: "/services" },
+                { icon: "graduation-cap", label: "Student Internships", sub: "Web Dev & Android · Paid · No interview", color: C.green, bg: C.greenLight, to: "/internships" },
+                { icon: "book-open", label: "Online Courses", sub: "Industry-oriented · Certificate included", color: "#a855f7", bg: "#f3e8ff", to: "/courses" },
               ].map(({ icon, label, sub, color, bg, to }) => (
                 <Link key={label} to={to} style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 14, padding: "1.1rem 1.4rem", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.sm, transition: "all 0.2s", textDecoration: "none" }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 8px 24px ${color}20`; e.currentTarget.style.transform = "translateX(4px)"; }}
@@ -102,7 +103,7 @@ export default function Home() {
           </RevealBox>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem", marginBottom: "2.5rem" }}>
-            {SERVICES.slice(0, 3).map(({ icon, title, desc, color }, i) => (
+            {SERVICES.slice(0, 4).map(({ icon, title, desc, color }, i) => (
               <RevealBox key={title} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 16, padding: "2rem", boxShadow: shadow.sm, transition: "all 0.25s", height: "100%" }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 12px 32px ${color}18`; e.currentTarget.style.transform = "translateY(-4px)"; }}
@@ -139,17 +140,16 @@ export default function Home() {
           </RevealBox>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem", marginBottom: "2.5rem" }}>
-            {INTERNSHIP_DOMAINS.slice(0, 3).map(({ icon, title, tech, seats, color }, i) => (
+            {INTERNSHIP_DOMAINS.slice(0, 3).map(({ icon, title, tech, color }, i) => (
               <RevealBox key={title} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 16, padding: "1.75rem", boxShadow: shadow.sm, transition: "all 0.25s" }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 12px 32px ${color}20`; e.currentTarget.style.transform = "translateY(-4px)"; }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.boxShadow = shadow.sm; e.currentTarget.style.transform = "none"; }}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
+                  <div style={{ marginBottom: 14 }}>
                     <div style={{ width: 52, height: 52, borderRadius: 14, background: `${color}12`, display: "flex", alignItems: "center", justifyContent: "center", color }}>
                       <Icon name={icon} size={24} />
                     </div>
-                    <span style={{ fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 50, background: seats === "Limited" ? C.yellowLight : C.greenLight, color: seats === "Limited" ? "#92400e" : "#065f46" }}>{seats === "Limited" ? "Limited Seats" : "Open"}</span>
                   </div>
                   <h3 style={{ fontWeight: 700, fontSize: 16, color: C.dark, margin: "0 0 6px" }}>{title}</h3>
                   <p style={{ fontSize: 13, color: C.muted, margin: "0 0 16px" }}>{tech}</p>
@@ -205,10 +205,11 @@ export default function Home() {
       <section style={{ padding: "5rem 2.5rem", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})` }}>
         <RevealBox>
           <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
-            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem", letterSpacing: "-1px" }}>Ready to Start Your Journey?</h2>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Join 15,000+ students who've transformed their careers with Crix Technology. Apply for our paid internship today.</p>
+            <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, color: "#fff", margin: "0 0 1rem", letterSpacing: "-1px" }}>Ready to Get Started?</h2>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>Need a website or app for your business? Get a free quote. A student looking to grow? Apply for our internship program today.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link to="/contact" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Apply Now</Link>
+              <Link to="/contact" style={{ background: "#fff", color: C.primary, borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>Get a Quote</Link>
+              <Link to="/internships" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 12, padding: "14px 36px", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>Apply Now</Link>
             </div>
           </div>
         </RevealBox>

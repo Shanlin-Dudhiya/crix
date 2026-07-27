@@ -13,15 +13,21 @@ export default function Footer() {
             <p style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.85, maxWidth: 300, marginBottom: 18 }}>
               Your one-stop solution for IT services, virtual internships, and future-ready skills training. Based in Ahmedabad, serving all of India.
             </p>
-            <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>9723223588</a><br />
-            <a href="tel:9712365388" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>9712365388</a><br />
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
+              <a href="tel:9723223588" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>9723223588</a>
+              <a href="https://wa.me/919723223588" target="_blank" rel="noreferrer" style={{ color: C.green, fontWeight: 700, textDecoration: "none", fontSize: 12, background: "rgba(16,185,129,0.15)", padding: "2px 9px", borderRadius: 50 }}>WhatsApp</a>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+              <a href="tel:9712365388" style={{ color: C.primary, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>9712365388</a>
+              <a href="https://wa.me/919712365388" target="_blank" rel="noreferrer" style={{ color: C.green, fontWeight: 700, textDecoration: "none", fontSize: 12, background: "rgba(16,185,129,0.15)", padding: "2px 9px", borderRadius: 50 }}>WhatsApp</a>
+            </div>
             <a href="mailto:crixtechnology@gmail.com" style={{ color: C.primary, fontWeight: 600, textDecoration: "none", fontSize: 14, marginTop: 6, display: "inline-block" }}>crixtechnology@gmail.com</a>
           </div>
 
           {[
-            { heading: "Internships", links: [["Web Development", "/internships"], ["Android Development", "/internships"]] },
-            { heading: "Company", links: [["About Us", "/about"], ["Services", "/services"], ["Courses", "/courses"], ["Contact", "/contact"]] },
-            { heading: "Quick Links", links: [["Apply for Internship", "/contact"], ["Payment", "/payment"], ["Privacy Policy", "/privacy-policy"], ["Terms of Service", "/terms-of-service"]] },
+            { heading: "For Businesses", links: [["Website Development", "/services"], ["App Development", "/services"], ["Digital Marketing", "/services"], ["IT Consulting", "/services"]] },
+            { heading: "For Students", links: [["Student Internship", "/internships"], ["Web Dev Internship", "/internships"], ["Android Internship", "/internships"], ["Courses", "/courses"]] },
+            { heading: "Company", links: [["About Us", "/about"], ["Payment", "/payment"], ["Privacy Policy", "/privacy-policy"], ["Terms of Service", "/terms-of-service"]] },
           ].map(({ heading, links }) => (
             <div key={heading}>
               <h4 style={{ fontWeight: 700, fontSize: 14, color: "#fff", margin: "0 0 1.1rem", letterSpacing: "0.3px" }}>{heading}</h4>

@@ -18,9 +18,9 @@ export default function Services() {
       {/* ── PAGE HEADER ─────────────────────────────────────────── */}
       <section style={{ background: `linear-gradient(135deg, #ede9fe, #f0f9ff)`, padding: "5rem 2.5rem 4rem", textAlign: "center" }}>
         <RevealBox>
-          <span style={{ display: "inline-block", background: C.accentLight, color: C.accent, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 18 }}>IT SERVICES</span>
-          <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1.5px" }}>Our IT Services</h1>
-          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 580, margin: "0 auto", lineHeight: 1.75 }}>End-to-end technology solutions for startups and enterprises across India. We build, we deliver, we support.</p>
+          <span style={{ display: "inline-block", background: C.accentLight, color: C.accent, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 18 }}>OUR SERVICES</span>
+          <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1.5px" }}>Websites, Apps & Career Programs</h1>
+          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 620, margin: "0 auto", lineHeight: 1.75 }}>We build websites and applications for businesses across India, and run paid virtual internships that launch student careers — all under one roof.</p>
         </RevealBox>
       </section>
 
@@ -28,7 +28,7 @@ export default function Services() {
       <section style={{ padding: "6rem 2.5rem", background: "#fff" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
-            {SERVICES.map(({ icon, title, desc, color }, i) => (
+            {SERVICES.map(({ icon, title, desc, color, link, cta }, i) => (
               <RevealBox key={title} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: `1px solid ${C.border}`, borderRadius: 18, padding: "2.25rem", boxShadow: shadow.sm, transition: "all 0.25s", height: "100%", position: "relative", overflow: "hidden" }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.boxShadow = `0 16px 48px ${color}18`; e.currentTarget.style.transform = "translateY(-5px)"; }}
@@ -40,7 +40,7 @@ export default function Services() {
                   </div>
                   <h3 style={{ fontWeight: 800, fontSize: 19, color: C.dark, margin: "0 0 10px" }}>{title}</h3>
                   <p style={{ color: C.textSub, fontSize: 15, lineHeight: 1.8, margin: "0 0 20px" }}>{desc}</p>
-                  <Link to="/contact" style={{ display: "inline-block", color, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get a Quote →</Link>
+                  <Link to={link || "/contact"} style={{ display: "inline-block", color, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>{cta || "Get a Quote"} →</Link>
                 </div>
               </RevealBox>
             ))}

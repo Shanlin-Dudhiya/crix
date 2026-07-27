@@ -27,7 +27,7 @@ export default function About() {
         <RevealBox>
           <span style={{ display: "inline-block", background: C.primaryLight, color: C.primaryDark, borderRadius: 50, padding: "4px 18px", fontSize: 12, fontWeight: 700, letterSpacing: "1px", marginBottom: 18 }}>WHO WE ARE</span>
           <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1rem", letterSpacing: "-1.5px" }}>About Crix Technology</h1>
-          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 600, margin: "0 auto", lineHeight: 1.75 }}>Building India's next generation of tech professionals — one intern at a time.</p>
+          <p style={{ color: C.textSub, fontSize: 18, maxWidth: 600, margin: "0 auto", lineHeight: 1.75 }}>Building websites & apps for businesses, and launching tech careers for students — one project, one intern at a time.</p>
         </RevealBox>
       </section>
 
@@ -37,15 +37,18 @@ export default function About() {
           <RevealBox>
             <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 900, color: C.dark, margin: "0 0 1.25rem", letterSpacing: "-1px", lineHeight: 1.2 }}>Our Story</h2>
             <p style={{ color: C.textSub, fontSize: 16, lineHeight: 1.9, marginBottom: 20 }}>
-              Crix Technology was founded with a simple but powerful belief: every student in India deserves access to real-world tech experience — regardless of their college, city, or financial background.
+              Crix Technology started as an IT services company in Ahmedabad, Gujarat, building websites and applications for businesses and startups across India. That client work is still at the core of what we do.
             </p>
             <p style={{ color: C.textSub, fontSize: 16, lineHeight: 1.9, marginBottom: 20 }}>
-              We started as a small IT services company in Ahmedabad, Gujarat. As we grew, we noticed something troubling — thousands of talented students graduating without practical skills that employers actually needed.
+              As we grew, we noticed something troubling — thousands of talented students graduating without practical skills that employers actually needed. We had real projects and real mentors, so we opened them up.
             </p>
             <p style={{ color: C.textSub, fontSize: 16, lineHeight: 1.9, marginBottom: 32 }}>
-              So we built our internship program — a paid virtual experience designed around real tasks that mirror actual industry work. Today, we've trained over 15,000 students from 200+ colleges across India.
+              That became our paid virtual internship program — real tasks that mirror the same work we do for clients. Today, we've trained over 15,000 students from 200+ colleges across India, alongside delivering hundreds of client projects.
             </p>
-            <Link to="/contact" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, textDecoration: "none", boxShadow: `0 4px 16px ${C.primary}35` }}>Join Our Program →</Link>
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <Link to="/services" style={{ display: "inline-block", background: `linear-gradient(135deg, ${C.primary}, ${C.accent})`, color: "#fff", borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, textDecoration: "none", boxShadow: `0 4px 16px ${C.primary}35` }}>Our Services →</Link>
+              <Link to="/internships" style={{ display: "inline-block", background: "#fff", color: C.primary, border: `1px solid ${C.primary}50`, borderRadius: 10, padding: "12px 28px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Join Our Program →</Link>
+            </div>
           </RevealBox>
 
           {/* <RevealBox delay={0.15}>

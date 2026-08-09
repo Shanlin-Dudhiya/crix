@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { C, shadow } from "../theme";
 import { CATALOG, PAYMENT_MODES, COMPANY } from "../data/billing";
 import { buildReceiptPdf, downloadReceiptPdf } from "../utils/pdfReceipt";
+import { round2 } from "../utils/money";
 
 const DOC_TYPES = ["Receipt", "Tax Invoice", "Quotation"];
 
@@ -40,7 +41,7 @@ export default function BillingReceipt() {
   const [dueDate, setDueDate] = useState("");
   const [billTo, setBillTo] = useState({ name: "", company: "", email: "", phone: "", address: "", gstin: "" });
   const [items, setItems] = useState([newItem()]);
-  const [discountPercent, setDiscountPercent] = useState(0);
+  const [discountAmount, setDiscountAmount] = useState(0); // flat amount in the selected currency, not a percentage
   const [taxPercent, setTaxPercent] = useState(CATALOG.INR.defaultTaxPercent);
   const [amountPaid, setAmountPaid] = useState(0);
   const [paymentMode, setPaymentMode] = useState("UPI");
@@ -57,23 +58,25 @@ export default function BillingReceipt() {
   const moneyLocale = currency === "INR" ? "en-IN" : "en-US";
 
   const totals = useMemo(() => {
-    const subtotal = items.reduce((s, it) => s + (Number(it.qty) || 0) * (Number(it.rate) || 0), 0);
-    const discountAmt = subtotal * (Number(discountPercent) || 0) / 100;
-    const taxable = subtotal - discountAmt;
-    const taxAmt = taxable * (Number(taxPercent) || 0) / 100;
-    const total = taxable + taxAmt;
-    const paid = Math.min(Number(amountPaid) || 0, total);
-    const balance = Math.max(total - paid, 0);
+    // Rounded at every step so "fully paid after discount" never leaves a
+    // fractional balance due to float dust (matches the PDF's math exactly).
+    const subtotal = round2(items.reduce((s, it) => s + (Number(it.qty) || 0) * (Number(it.rate) || 0), 0));
+    const discountAmt = round2(Math.min(Math.max(Number(discountAmount) || 0, 0), subtotal));
+    const taxable = round2(subtotal - discountAmt);
+    const taxAmt = round2(taxable * (Number(taxPercent) || 0) / 100);
+    const total = round2(taxable + taxAmt);
+    const paid = round2(Math.min(Math.max(Number(amountPaid) || 0, 0), total));
+    const balance = round2(Math.max(total - paid, 0));
     return { subtotal, discountAmt, taxAmt, total, paid, balance };
-  }, [items, discountPercent, taxPercent, amountPaid]);
+  }, [items, discountAmount, taxPercent, amountPaid]);
 
   const formPayload = useMemo(() => ({
     docType, currency, symbol: catalog.symbol, receiptNo, date, dueDate,
-    billTo, items, discountPercent: Number(discountPercent) || 0,
+    billTo, items, discountAmount: Number(discountAmount) || 0,
     taxLabel: catalog.defaultTaxLabel, taxPercent: Number(taxPercent) || 0,
     amountPaid: Number(amountPaid) || 0, paymentMode, notes,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }), [docType, currency, receiptNo, date, dueDate, billTo, items, discountPercent, taxPercent, amountPaid, paymentMode, notes]);
+  }), [docType, currency, receiptNo, date, dueDate, billTo, items, discountAmount, taxPercent, amountPaid, paymentMode, notes]);
 
   // Regenerate the live PDF preview shortly after any field changes.
   useEffect(() => {
@@ -114,6 +117,7 @@ export default function BillingReceipt() {
     setCurrency(cur);
     setTaxPercent(CATALOG[cur].defaultTaxPercent);
     setCatalogPick({ service: "", tier: "" });
+    setDiscountAmount(0); // a flat discount doesn't carry across currencies
   };
 
   const handleDownload = async () => {
@@ -249,7 +253,7 @@ export default function BillingReceipt() {
             <div style={card}>
               <h3 style={{ margin: "0 0 16px", fontWeight: 800, fontSize: 16, color: C.dark }}>Discount, Tax &amp; Payment</h3>
               <div style={row}>
-                <Field><label style={label}>Discount (%)</label><input type="number" min="0" max="100" style={inputStyle} value={discountPercent} onChange={(e) => setDiscountPercent(e.target.value)} /></Field>
+                <Field><label style={label}>Discount ({catalog.symbol})</label><input type="number" min="0" step="0.01" max={totals.subtotal || undefined} style={inputStyle} value={discountAmount} onChange={(e) => setDiscountAmount(e.target.value)} placeholder="0.00" /></Field>
                 <Field><label style={label}>{catalog.defaultTaxLabel.replace(/\s*\(.*\)/, "")} (%)</label><input type="number" min="0" max="100" style={inputStyle} value={taxPercent} onChange={(e) => setTaxPercent(e.target.value)} /></Field>
               </div>
               <div style={row}>
@@ -268,7 +272,7 @@ export default function BillingReceipt() {
 
               <div style={{ borderTop: `1px dashed ${C.border}`, marginTop: 6, paddingTop: 14, display: "flex", flexDirection: "column", gap: 6 }}>
                 <SummaryLine label="Subtotal" value={totals.subtotal} symbol={catalog.symbol} locale={moneyLocale} />
-                {discountPercent > 0 && <SummaryLine label={`Discount (${discountPercent}%)`} value={-totals.discountAmt} symbol={catalog.symbol} locale={moneyLocale} />}
+                {totals.discountAmt > 0 && <SummaryLine label="Discount" value={-totals.discountAmt} symbol={catalog.symbol} locale={moneyLocale} />}
                 {taxPercent > 0 && <SummaryLine label={catalog.defaultTaxLabel} value={totals.taxAmt} symbol={catalog.symbol} locale={moneyLocale} />}
                 <SummaryLine label="Total" value={totals.total} symbol={catalog.symbol} locale={moneyLocale} bold />
                 <SummaryLine label="Amount Paid" value={totals.paid} symbol={catalog.symbol} locale={moneyLocale} />

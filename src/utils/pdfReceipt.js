@@ -3,6 +3,7 @@ import autoTable from "jspdf-autotable";
 import { COMPANY, BRAND } from "../data/billing";
 import { amountToWords } from "./numberToWords";
 import loadImageDataUrl from "./loadImageDataUrl";
+import { round2 } from "./money";
 
 const PAGE_W = 210;
 const PAGE_H = 297;
@@ -46,7 +47,7 @@ export async function buildReceiptPdf(form) {
     dueDate,
     billTo = {},
     items = [],
-    discountPercent = 0,
+    discountAmount = 0, // flat amount in the document's currency, not a percentage
     taxLabel = "GST (18%)",
     taxPercent = 0,
     amountPaid = 0,
@@ -62,13 +63,16 @@ export async function buildReceiptPdf(form) {
   const lineItems = items.filter((it) => (it.description || "").trim() || (Number(it.qty) || 0) * (Number(it.rate) || 0) !== 0);
 
   // ── Totals ────────────────────────────────────────────────────────────
-  const subtotal = items.reduce((sum, it) => sum + (Number(it.qty) || 0) * (Number(it.rate) || 0), 0);
-  const discountAmt = subtotal * (Number(discountPercent) || 0) / 100;
-  const taxable = subtotal - discountAmt;
-  const taxAmt = taxable * (Number(taxPercent) || 0) / 100;
-  const total = taxable + taxAmt;
-  const paid = Math.min(Number(amountPaid) || 0, total);
-  const balance = Math.max(total - paid, 0);
+  // Every step is rounded to 2 decimals immediately — money math done in
+  // raw floats can leave dust like 3998.999999999, which would make a
+  // fully-paid, fully-discounted bill compare as "still owing a fraction".
+  const subtotal = round2(items.reduce((sum, it) => sum + (Number(it.qty) || 0) * (Number(it.rate) || 0), 0));
+  const discountAmt = round2(Math.min(Math.max(Number(discountAmount) || 0, 0), subtotal));
+  const taxable = round2(subtotal - discountAmt);
+  const taxAmt = round2(taxable * (Number(taxPercent) || 0) / 100);
+  const total = round2(taxable + taxAmt);
+  const paid = round2(Math.min(Math.max(Number(amountPaid) || 0, 0), total));
+  const balance = round2(Math.max(total - paid, 0));
   const status = balance <= 0 && total > 0 ? "Paid" : paid > 0 ? "Partially Paid" : "Unpaid";
 
   // ── Assets ───────────────────────────────────────────────────────────
@@ -233,7 +237,7 @@ export async function buildReceiptPdf(form) {
   const totalsW = 80;
   const rows = [
     ["Subtotal", fmtMoney(subtotal, pdfSymbol, moneyLocale)],
-    ...(discountPercent > 0 ? [[`Discount (${discountPercent}%)`, `- ${fmtMoney(discountAmt, pdfSymbol, moneyLocale)}`]] : []),
+    ...(discountAmt > 0 ? [["Discount", `- ${fmtMoney(discountAmt, pdfSymbol, moneyLocale)}`]] : []),
     ...(taxPercent > 0 ? [[taxLabel, fmtMoney(taxAmt, pdfSymbol, moneyLocale)]] : []),
   ];
 

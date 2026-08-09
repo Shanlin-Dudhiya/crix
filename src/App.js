@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Payment from "./pages/Payment";
+import BillingReceipt from "./pages/BillingReceipt";
 import { C } from "./theme";
 
 function NotFound() {
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/payment" element={<Payment />} />
+            <Route path="/billing-receipt" element={<BillingReceipt />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
